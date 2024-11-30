@@ -1,0 +1,905 @@
+<!-- Header -->
+<nav class="navbar navbar-expand-lg shadow-sm fixed-top" style="background: linear-gradient(90deg, rgba(30,87,153,0.9) 0%, rgba(41,137,216,0.8) 50%, rgba(125,185,232,0.7) 100%); z-index: 1000;">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-white" routerLink="/Home">
+      <h3 class="mb-0" style="font-family: 'Montserrat', sans-serif;">ElectronicaRoca</h3>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link fw-bold text-white" routerLink="/Producto">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold text-white" routerLink="/Novedades">Novedades</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold text-white" routerLink="/Favoritos">Favoritos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold text-white" routerLink="/Contacto">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold text-white" routerLink="/Mis Compras">Historial</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto d-flex align-items-center">
+        <li class="nav-item d-flex align-items-center">
+          <img src="https://st4.depositphotos.com/14903220/22197/v/950/depositphotos_221970610-stock-illustration-abstract-sign-avatar-icon-profile.jpg" class="rounded-circle shadow-sm" style="width: 45px; height: 45px; border: 2px solid #FFD700;" alt="User Image">
+          <a class="nav-link fw-bold text-white ms-3" routerLink="login" style="font-size: 18px;">User</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold text-white" routerLink="/Administrador" style="font-size: 18px;">Administrar</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- CSS -->
+<style>
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .navbar-brand h3 {
+    font-size: 30px;
+    letter-spacing: 1.5px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 20px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #FFD700; /* Color dorado elegante */
+    transform: scale(1.1);
+  }
+
+  .navbar-toggler-icon {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .navbar-nav.ms-auto img {
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-nav.ms-auto img:hover {
+    transform: scale(1.15);
+    border-color: #FFFFFF;
+  }
+
+  /* Media Query for Small Screens */
+  @media (max-width: 576px) {
+    .navbar-brand h3 {
+      font-size: 22px;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 16px;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .navbar-nav.ms-auto img {
+      width: 35px;
+      height: 35px;
+    }
+
+    .navbar-nav.ms-auto .nav-item {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .navbar-nav.ms-auto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .container-fluid {
+      padding: 0 10px;
+    }
+  }
+
+  /* Para evitar que el contenido se esconda debajo del header */
+  body {
+    padding-top: 75px; /* Ajusta el valor según la altura del header */
+  }
+</style>
+
+
+
+
+
+
+
+
+<!-- Popup Component -->
+<app-side-popup #popup></app-side-popup>
+
+<!-- Router Outlet -->
+<router-outlet></router-outlet>
+
+<!-- Footer Component -->
+<app-footer></app-footer>
+
+
+<!-- POPUP REGISTRO-->
+
+
+<!-- Button for Popup (Carrito) -->
+<button class="open-popup-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample1" aria-controls="offcanvasExample1"> 
+  <i class="bi bi-cart"></i>
+</button>
+
+<!-- Button for Popup2 (Registro) -->
+<button class="open-popup-btn2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample2" aria-controls="offcanvasExample2">
+  <i class="bi bi-person-plus"></i> <!-- Icono de registro -->
+</button>
+
+<!-- Button for Popup3 (Filtro de categoría) -->
+<button class="open-popup-btn3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample3" aria-controls="offcanvasExample3">
+  <i class="bi bi-search"></i>
+</button>
+
+
+<!-- Offcanvas Carrito -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample1" aria-labelledby="offcanvasExampleLabel1">
+  <div class="offcanvas-body">
+    <h2 class="title-carrito">Tu Carrito</h2>
+    <div class="container-productos">
+      <div class="producto-row" *ngFor="let producto of dataproductos">
+        <div class="producto-img">
+          <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSAN00yReAo8_3pdmLUdw8DgIfYi2JnrujfgVA3FMRUuwye0-0Udbf_Xm7DClt9zvr549DOEPgxl5PphiM6oNpeh-dlsoMCmENu4_-S79Pv6Bp_UIo2z_hu&usqp=CAE" alt="{{producto.NOM_Producto}}" class="img-fluid">
+        </div>
+        <div class="producto-info">
+          <h4>{{ producto.NOM_Producto }}</h4>
+          <div class="producto-precio">
+            ${{producto.PRECIO_Producto}}
+          </div>
+          <div class="btn-group acciones">
+            <button type="button" class="btn btn-eliminar">Eliminar</button>
+            <button type="button" class="btn btn-guardar">Guardar</button>
+          </div>
+        </div>
+        <div class="producto-cantidad">
+          <button class="btn-cantidad">-</button>
+          <input type="text" class="input-cantidad" value="1">
+          <button class="btn-cantidad">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="resumen-total">
+      <div class="row total-row">
+        <div class="col-9">Total</div>
+        <div class="col-3">$Valor_total</div>
+      </div>
+      <div class="botones-compra">
+        <button type="button" class="btn btn-compra" routerLink="">Comprar ahora</button>
+        <button type="button" class="btn btn-ir-carrito" routerLink="">Ir al carrito</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.offcanvas-title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Carrito Title */
+.title-carrito {
+  font-size: 26px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Product Container */
+.container-productos {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 10px;
+  border-top: 1px solid #ddd;
+}
+
+/* Product Row Styling */
+.producto-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.producto-img img {
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Product Info */
+.producto-info {
+  flex: 1;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-info h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.producto-precio {
+  font-size: 18px;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.acciones {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* Cantidad Styling */
+.producto-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-cantidad {
+  background-color: #000000a6;
+  color: white;
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.input-cantidad {
+  width: 45px;
+  height: 30px;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+}
+
+/* Resumen Total Section */
+.resumen-total {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-top: 2px solid #007bff;
+  border-radius: 8px;
+}
+
+.total-row {
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.total-row .col-3 {
+  text-align: left;
+  padding-left: 0px; /* Ajusta el espacio según lo necesario */
+  color: #28a745;
+}
+
+
+
+/* Button Group */
+.botones-compra {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.botones-compra button {
+  padding: 15px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.botones-compra button:hover {
+  background-color: #0056b3;
+}
+
+/* Botón Eliminar */
+.btn-eliminar {
+  background-color: #ff6b6b;
+  border: none;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.btn-eliminar:hover {
+  background-color: #ff4c4c;
+}
+
+/* Botón Guardar */
+.btn-guardar {
+  background-color: #51cf66;
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-guardar:hover {
+  background-color: #40c057;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .producto-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .producto-info, .producto-cantidad {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .acciones {
+    margin-top: 10px;
+  }
+
+  .botones-compra button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .producto-row {
+    flex-direction: row;
+  }
+
+  .botones-compra {
+    flex-direction: row;
+  }
+
+  .botones-compra button {
+    width: auto;
+    flex: 1;
+  }
+}
+</style>
+
+
+
+
+<!-- popup inicio sesión -->
+
+<!-- Offcanvas Registro -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample2" aria-labelledby="offcanvasExampleLabel2" style="background-color: transparent; box-shadow: none; border: none;">
+  <div class="offcanvas-body d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    
+    <!-- Página de Login -->
+    <div class="login-card">
+      <h2 class="login-title">Iniciar Sesión</h2>
+      <form>
+        <div class="form-group">
+          <label for="username">Nombre de Usuario</label>
+          <input type="text" id="username" name="username" placeholder="Introduce tu nombre de usuario" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" placeholder="Introduce tu contraseña" required>
+        </div>
+        <button type="submit" class="btn-login">Iniciar Sesión</button>
+        <button type="button" class="btn-guest">Ingresar como Invitado</button> <!-- Nuevo botón agregado -->
+      </form>
+      <div class="signup-link">
+        <p>¿No tienes una cuenta? <a href="#">Regístrate aquí</a></p>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+<style>
+
+
+/* Estilos para la página de login */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  background: linear-gradient(to right, #ff5f5f, #2196f3); /* Fondo degradado en tonos rojo y azul */
+}
+
+.login-card {
+  background-color: #ffffff;
+  border-radius: 20px; /* Bordes más redondeados */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+  padding: 2.5rem;
+  max-width: 400px;
+  width: 100%;
+  border: 1px solid #2196f3; /* Borde en color azul */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.login-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Efecto de sombra al pasar el ratón */
+  transform: translateY(-5px); /* Ligera elevación al pasar el ratón */
+}
+
+.login-title {
+  font-size: 2.2rem; /* Tamaño de fuente mayor */
+  margin-bottom: 1.5rem;
+  color: #d32f2f; /* Título en color rojo */
+  text-align: center;
+  font-weight: 700; /* Negrita para el título */
+}
+
+.form-group {
+  margin-bottom: 1.5rem; /* Espacio más amplio entre los campos */
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #555; /* Color de texto más suave */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d32f2f; /* Borde en color rojo */
+  border-radius: 8px; /* Bordes más redondeados */
+  box-sizing: border-box;
+  font-size: 1rem; /* Tamaño de fuente del campo */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #ff1744; /* Cambio a un tono más intenso de rojo en foco */
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 23, 68, 0.5); /* Sombra roja en foco */
+}
+
+button.btn-login {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #2196f3; /* Botón azul */
+  border: none;
+  color: #ffffff;
+  border-radius: 8px; /* Bordes redondeados para el botón */
+  font-size: 1.1rem; /* Tamaño de fuente del botón */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.btn-login:hover {
+  background-color: #1976d2; /* Azul más oscuro al pasar el ratón */
+  transform: translateY(-2px); /* Efecto de elevación al pasar el ratón */
+}
+
+button.btn-guest {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #f44336; /* Color rojo para el botón de invitado */
+  border: none;
+  color: #ffffff;
+  border-radius: 8px; /* Bordes redondeados para el botón */
+  font-size: 1.1rem; /* Tamaño de fuente del botón */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 1rem; /* Espacio entre el botón de inicio de sesión y el de invitado */
+}
+
+button.btn-guest:hover {
+  background-color: #d32f2f; /* Rojo más oscuro al pasar el ratón */
+  transform: translateY(-2px); /* Efecto de elevación al pasar el ratón */
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.signup-link p {
+  margin: 0;
+}
+
+.signup-link a {
+  color: #2196f3; /* Azul para el enlace de registro */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+  color: #1976d2; /* Azul más oscuro al pasar el ratón */
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Filtro de Categorías -->
+<div class="offcanvas offcanvas-start filter-popup" tabindex="-1" id="offcanvasExample3" aria-labelledby="offcanvasExampleLabel3">
+  <div class="offcanvas-body filter-popup-overlay" id="filterPopup">
+    <div class="filter-container">
+      <h4>Filtrar Categorías</h4>
+      
+<!-- Botón de Categorías -->
+      <div class="category-dropdown">
+        <button class="category-btn" onclick="toggleCategories()">Categorías</button>
+
+        <div class="category-content" id="categoryDropdown">
+          <ul>
+            <li><a href="#">Electrónica</a></li>
+            <li><a href="#">Moda</a></li>
+            <li><a href="#">Hogar</a></li>
+            <li><a href="#">Deportes</a></li>
+            <li><a href="#">Juguetes</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <label for="price-range">Precio</label>
+        <input type="range" id="price-range" min="0" max="500000" value="10000">
+        <span id="price-range-value">10,000</span>
+      </div>
+
+      <div class="filter-group">
+        <label for="keywords">Palabras clave:</label>
+        <input type="text" id="keywords" placeholder="Buscar...">
+      </div>
+
+      <div class="filter-group">
+        <label for="brands">Marcas:</label>
+        <select id="brands">
+          <option value="all">Todas</option>
+          <option value="brand1">Marca 1</option>
+          <option value="brand2">Marca 2</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="types">Tipos:</label>
+        <select id="types">
+          <option value="all">Todas</option>
+          <option value="type1">Tipo 1</option>
+          <option value="type2">Tipo 2</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="quantity">Cantidad</label>
+        <input type="range" id="quantity-range" min="0" max="250" value="5">
+        <span id="quantity-range-value">5</span>
+      </div>
+
+      <div class="filter-actions">
+        <button class="btn btn-apply">Aplicar</button>
+        <button class="btn btn-reset">Restablecer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Popup transparente y dimensiones ajustadas */
+  .filter-popup {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+    max-height: 80vh;
+    border: none;
+    margin-top: 100px; /* Ajusta el valor según necesites */
+  }
+  
+  .filter-popup-overlay {
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .filter-container h4 {
+    text-align: center;
+    font-size: 18px;
+    color: #007bff;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Botón desplegable de categorías */
+
+  .category-content {
+  display: none; /* Oculto por defecto */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 15px;
+  z-index: 1000;
+  min-width: 100%;
+  border: 1px solid #ddd;
+}
+
+.category-content.show {
+  display: block; /* Mostrar cuando tiene la clase 'show' */
+}
+
+  .category-dropdown {
+    position: relative;
+    margin-top: 10px;
+  }
+  
+  .category-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px; /* Aumenta el padding */
+    font-size: 18px;    /* Aumenta el tamaño de la fuente */
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: auto; /* Cambia a auto o especifica un ancho mayor */
+}
+
+  
+  .category-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .category-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 15px;
+    z-index: 1000;
+    min-width: 100%;
+    border: 1px solid #ddd;
+    animation: slideDown 0.3s ease;
+  }
+  
+  .category-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .category-content ul li {
+    margin-bottom: 5px;
+  }
+  
+  .category-content ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 8px;
+    display: block;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .category-content ul li a:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+
+
+  .category-content.show {
+  display: block;
+}
+
+
+  /* Otros estilos del popup */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 5px;
+  }
+  
+  ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 8px;
+    display: block;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  ul li a:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+  }
+  
+  .filter-group label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 3px;
+  }
+  
+  .filter-group input[type="range"] {
+    width: 100%;
+    accent-color: #007bff;
+  }
+  
+  .filter-group input[type="text"],
+  .filter-group select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    margin-top: 3px;
+  }
+  
+  .filter-group span {
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .filter-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  
+  .filter-actions .btn {
+    width: 48%;
+    padding: 8px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .filter-actions .btn-reset {
+    background-color: #dc3545;
+  }
+  
+  .filter-actions .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .filter-actions .btn-reset:hover {
+    background-color: #c82333;
+  }
+  
+  @media (max-width: 768px) {
+    .filter-popup {
+      max-width: 100%;
+      padding: 10px;
+      max-height: 70vh;
+    }
+  
+    .filter-container h4 {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .filter-popup {
+      padding: 8px;
+      max-height: 60vh;
+    }
+  
+    .filter-actions {
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .filter-actions .btn {
+      width: 100%;
+    }
+  }
+  </style>
+
+<script>
+document.getElementById("price-range").addEventListener("input", function() {
+  document.getElementById("price-range-value").textContent = parseInt(this.value).toLocaleString();
+});
+document.getElementById("quantity-range").addEventListener("input", function() {
+  document.getElementById("quantity-range-value").textContent = this.value;
+});
+
+// Función para mostrar/ocultar el menú desplegable de categorías
+function toggleCategories() {
+  const dropdown = document.getElementById("categoryDropdown");
+  dropdown.classList.toggle("show");
+}
+
+// Cerrar el menú si se hace clic fuera de él
+window.onclick = function(event) {
+  if (!event.target.matches('.category-btn')) {
+    const dropdowns = document.getElementsByClassName("category-content");
+    for (let i = 0; i < dropdowns.length; i++) {
+      const openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+</script>

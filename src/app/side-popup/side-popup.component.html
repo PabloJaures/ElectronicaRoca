@@ -1,0 +1,46 @@
+<div class="side-popup" [style.right]="popupPosition">
+  <div class="side-popup-content">
+    <span class="close-btn" (click)="closePopup()">&times;</span>
+    <h2 class="Title">Carrito</h2>
+    <div class="container-slidepopup">
+      <div class="row" *ngFor="let producto of dataProductos">
+        <div class="col-sm-1" style="background-color: aqua">
+          <img />
+        </div>
+        <div class="col-sm-3" style="background-color: yellow">
+          <div class="row">
+            {{ producto.NOM_Producto }}
+          </div>
+          <div class="row">
+            <div class="btn-group">
+            <button type="button" class="btn btn-sm">Eliminar</button>
+            <button type="button" class="btn btn-sm" >Guardar</button>
+          </div>
+          </div>
+        </div>
+        <div class="col-sm-3" style="background-color: green;">
+        <div class="btn-group">
+          <button class="btn btn-sm btn-light">-</button>
+          <input type="text" class="input_button" value="1">
+          <button class="btn btn-sm btn-light">+</button>
+        </div>
+        </div>
+        <div class="col-sm-2">
+          ${{producto.PRECIO_Producto}}
+        </div>
+      </div>
+    </div>
+  <div class="container-fluid" style="background-color: rgba(141, 194, 238, 0.801)">
+    <div class="row">
+      <div class="col-sm-9">Total</div>
+      <div class="col-sm-3">$Valor_total</div>
+    </div>
+    <div class="row">
+      <div class="container-fluid" style="background-color: rgb(255, 255, 255)">
+        <button type="button" class="btn btn-primary" routerLink="">Comprar ahora</button> 
+      
+        <button type="button" class="btn btn-primary" routerLink="">ir al carro</button>
+      </div>
+    </div>
+  </div>
+</div>

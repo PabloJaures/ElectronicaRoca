@@ -1,0 +1,470 @@
+/* General layout */
+.producto-detalles {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    align-items: flex-start; /* Alinea los elementos al inicio del contenedor principal */
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+/* Main image container */
+.main-image-container {
+    flex-grow: 1; /* La imagen principal ocupa el espacio restante */
+    max-width: 600px; /* Tamaño máximo ajustado para la imagen principal */
+    padding-left: 10px; /* Ajusta el espacio entre la imagen principal y las miniaturas */
+}
+
+.main-image-container img {
+    max-width: 100%; /* La imagen principal ocupa todo el ancho disponible */
+    height: auto; /* Mantiene la relación de aspecto */
+}
+
+
+
+
+/* boton favoritos */
+
+
+.favoritosproductos1 {
+    font-size: 40px;
+    color: #bbb; /* Color por defecto */
+    background: #f1f1f100;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.favoritosproductos1:hover {
+    color: #ff69b4; /* Cambia el color al pasar el ratón */
+}
+
+.favoritosproductos1.active {
+    color: #ff69b4; /* Color del corazón activo (favorito) */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Thumbnails */
+.thumbnails {
+    display: flex;
+    flex-direction: column; /* Coloca las imágenes en una columna (vertical) */
+    gap: 8px; /* Espacio entre las miniaturas */
+    margin-right: 10px; /* Reducido para dar más espacio a la imagen principal */
+    margin-top: 0; /* Alinea con la imagen principal sin margen superior adicional */
+}
+
+.thumbnails img {
+    width: 80px; /* Ajuste del ancho de miniaturas para hacerlas más pequeñas */
+    height: 80px; /* Ajuste de la altura */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.thumbnails img:hover {
+    transform: scale(1.1);
+}
+
+/* Productos info */
+.product-info {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.product-info h2 {
+    font-size: 1.8rem;
+    color: #007bff; /* Cambiado a azul para más coherencia */
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.rating i {
+    color: #f5c518;
+}
+
+.rating span {
+    margin-left: 10px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Price styling */
+.price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #e63946;
+    margin: 15px 0;
+}
+
+.price .discount {
+    font-size: 1rem;
+    color: #38b000;
+    margin-left: 10px;
+    background-color: #d1fae5;
+    padding: 2px 6px;
+    border-radius: 5px;
+}
+
+/* Opciones de color */
+.color-options {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.color-box {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.color-box:hover {
+    border-color: #333;
+}
+
+/* Stock */
+.stock {
+    margin: 20px 0;
+}
+
+.stock p {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+/* Botones */
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.buttons button:first-child {
+    background-color: #ff6f61;
+    color: white;
+}
+
+.buttons button:first-child:hover {
+    background-color: #e63946;
+}
+
+.buttons button:last-child {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.buttons button:last-child:hover {
+    background-color: #ccc;
+}
+
+/* Features section */
+.features-container {
+    margin-top: 20px;
+}
+
+.features-container h2 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.features-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.features-container ul li {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 0.9rem;
+    padding-left: 20px;
+    position: relative;
+}
+
+.features-container ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #e63946;
+}
+
+.features-container .see-more {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.features-container .see-more:hover {
+    color: #0056b3;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-info {
+        padding: 0;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .buttons button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* Carrusel */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.product-cards {
+    display: flex;
+    justify-content: flex-start;
+    width: 400%; 
+    transition: transform 0.5s ease-in-out;
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    width: 220px;
+    margin: 0 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e63946;
+}
+
+.discount {
+    font-size: 0.9rem;
+    color: #38b000;
+    margin-left: 5px;
+}
+
+.carousel-btn {
+    background: linear-gradient(135deg, #ff6f61, #e63946);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(230, 57, 70, 0.9);
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* Características del producto */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.caracteristicas {
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px; /* Aumento de ancho para un mejor espaciado */
+    margin: 20px auto; /* Añadido margen superior e inferior */
+    padding: 20px; /* Añadido padding para un mejor espaciado interno */
+    flex-wrap: wrap; /* Permitir que las columnas se envuelvan en pantallas más pequeñas */
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre las características incrementado */
+}
+
+.caracteristica {
+    background-color: #ffffff; /* Color de fondo blanco */
+    border-radius: 8px; /* Bordes más redondeados */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    padding: 15px; /* Aumento de padding para mayor confort */
+    width: 200px; /* Ancho incrementado para un mejor equilibrio */
+    transition: transform 0.3s, box-shadow 0.3s; /* Añadido efecto de sombra en hover */
+}
+
+.caracteristica:hover {
+    transform: translateY(-5px); /* Efecto de elevación más pronunciado */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa al hacer hover */
+}
+
+.caracteristica h3 {
+    color: #007bff; /* Color azul */
+    margin-bottom: 8px; /* Espaciado inferior aumentado */
+    font-size: 1.2em; /* Tamaño de fuente mayor para mayor énfasis */
+    font-weight: 600; /* Negrita para mayor claridad */
+}
+
+.caracteristica p {
+    color: #666; /* Color de texto más suave */
+    font-size: 0.95em; /* Tamaño de fuente ligeramente incrementado */
+    margin: 0; /* Eliminado el margen */
+}
+
+/* Producto Information */
+.producto-info {
+    background-color: #ffffffd3; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.815); /* Sombra sutil */
+    padding: 20px; /* Espaciado interno */
+    max-width: 800px; /* Ancho máximo */
+    margin: auto; /* Centrar contenedor */
+    margin-top: 20px; /* Espaciado superior */
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+.titulo-principal {
+    text-align: center; /* Centrar título */
+    color: #333333ce; /* Color del título */
+    font-size: 2rem; /* Tamaño del título */
+    margin-bottom: 15px; /* Espacio inferior */
+}
+
+.nombre-producto {
+    color: #007bffd0; /* Color azul para el título del producto */
+    font-size: 1.8rem; /* Tamaño del título del producto */
+    margin-bottom: 15px; /* Espacio inferior */
+    text-align: center; /* Centrar título */
+}
+
+.detalle-caracteristica {
+    margin-bottom: 20px; /* Espaciado inferior entre características */
+}
+
+.subtitulo-caracteristica {
+    color: #e63947e7; /* Color rojo para los encabezados de características */
+    font-size: 1.5rem; /* Tamaño del encabezado */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+.texto-caracteristica {
+    color: #555555d5; /* Color del texto de características */
+    margin: 0; /* Sin margen */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .producto-info {
+        padding: 15px; /* Ajustar espaciado en móviles */
+    }
+
+    .titulo-principal {
+        font-size: 1.5rem; /* Tamaño de fuente más pequeño en móviles */
+    }
+
+    .nombre-producto {
+        font-size: 1.6rem; /* Tamaño de fuente más pequeño en móviles */
+    }
+
+    .subtitulo-caracteristica {
+        font-size: 1.3rem; /* Tamaño de encabezados más pequeño en móviles */
+    }
+}

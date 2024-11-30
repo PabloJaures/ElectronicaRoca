@@ -1,0 +1,68 @@
+<br><br><br><br><br>
+<div class="form-container">
+  <form [formGroup]="form_invited()" class="needs-validation" novalidate>
+    <label
+      >Nombre<input
+        id="name"
+        type="text"
+        formControlName="name"
+        class="form-control"
+        required
+    /></label>
+    <label 
+      >Apellido<input
+        type="text"
+        formControlName="apellido"
+        class="form-control"
+        required
+    /></label>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+
+    <label
+      >Telefono
+    </label>
+      <div class="input-group"><span class="input-group-text">+56</span><input class="form-control" type="tel" formControlName="number" /></div>
+    <label
+      >E-mail<input class="form-control" type="email" formControlName="email"
+    /></label>
+    <label
+      >Direccion<input class="form-control" type="text" formControlName="calle"
+    /></label>
+    <label for="regionSelect">Región:</label>
+    <select
+      class="form-select"
+      id="regionSelect"
+      formControlName="region"
+      (change)="onRegionChange($event)"
+    >
+      <option
+        *ngFor="let region of regionesData.regiones"
+        [value]="region.region"
+      >
+        {{ region.region }}
+      </option>
+    </select>
+
+    <label for="comunaSelect">Comuna:</label>
+    <select class="form-select" id="comunaSelect" formControlName="comuna">
+      <option *ngFor="let comuna of comunas" [value]="comuna">
+        {{ comuna }}
+      </option>
+    </select>
+
+    <button
+      class="btn"
+      type="submit"
+      (click)="Validator()"
+      [disabled]="form_invited().invalid"
+    >
+      Confirmar
+    </button>
+  </form>
+</div>
+
+<pre>{{ form_invited().value | json }}</pre>
+<h3>Es valido?</h3>
+<pre>{{ form_invited().valid | json }}</pre>

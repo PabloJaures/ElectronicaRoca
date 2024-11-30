@@ -1,0 +1,1106 @@
+<div class="perfil-principal">
+    <nav class="perfil-navegacion">
+        
+        <ul class="tab-menu">
+            <li><a href="#perfil" class="tab-activo"><i class="fas fa-user"></i> Perfil</a></li>
+            <li><a href="#configuracion"><i class="fas fa-cogs"></i> Contraseña</a></li>
+            <li><a href="#ventas"><i class="fas fa-store"></i> Vendedor</a></li>
+            <li><a href="#notificaciones"><i class="fas fa-bell"></i> Notificaciones</a></li>
+        </ul>
+    </nav>
+    
+
+    <div id="perfil" class="tab-contenido activo">
+        <h2>Perfil</h2>
+        <div class="tab-seccion">
+            <img src="https://modaellos.com/wp-content/uploads/2017/11/cortes-tipo-rostro-ovalado-istock.jpg" alt="Foto de Perfil" class="imagen-perfil">
+            <form class="formulario">
+                <label for="name">Nombre Completo</label>
+                <input type="text" id="name" placeholder="Marcelo Días">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" placeholder="email@example.com">
+                <label for="phone">Teléfono</label>
+                <input type="tel" id="phone" placeholder="+56 9 123456789">
+                <label for="address">Dirección</label>
+                <textarea id="address" rows="2" placeholder="Calle, Ciudad, País"></textarea>
+                <button type="submit" class="boton">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="configuracion" class="tab-contenido">
+        <h2>Configuración</h2>
+        <form class="formulario">
+            <label for="current-password">Contraseña Actual</label>
+            <input type="password" id="current-password" placeholder="••••••••">
+            <label for="new-password">Nueva Contraseña</label>
+            <input type="password" id="new-password" placeholder="••••••••">
+            <label for="confirm-password">Confirmar Nueva Contraseña</label>
+            <input type="password" id="confirm-password" placeholder="••••••••">
+            <button type="submit" class="boton">Cambiar Contraseña</button>
+        </form>
+    </div>
+
+    <div id="ventas" class="tab-contenido">
+        <h2>Perfil de Vendedor</h2>
+        <form class="formulario">
+            <label for="store-name">Nombre de la Tienda</label>
+            <input type="text" id="store-name" placeholder="Mi Tienda">
+            <label for="description">Descripción</label>
+            <textarea id="description" rows="3" placeholder="Describe tu tienda"></textarea>
+            <label for="payment">Métodos de Pago</label>
+            <input type="text" id="payment" placeholder="Cuenta Bancaria / PayPal">
+            <button type="submit" class="boton">Actualizar Perfil</button>
+        </form>
+    </div>
+
+    <div id="notificaciones" class="tab-contenido">
+        <h2>Notificación de Ventas</h2>
+        <div class="notificaciones-grid">
+            <!-- Notificación 1 -->
+            <div class="notificacion">
+                <img src="https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCL/116228097_01/w=800,h=800,fit=pad" alt="Smartphone Samsung">
+                <div class="notificacion-info">
+                    <h4>Smartphone Samsung Galaxy S22</h4>
+                    <p><strong>Precio:</strong> $899,990</p>
+                    <p><strong>Estado:</strong> Entregado</p>
+                    <p><strong>Fecha de compra:</strong> 12 de Noviembre, 2024</p>
+                    <p><strong>Vendedor:</strong> Samsung Store</p>
+                    <p><strong>Forma de pago:</strong> Tarjeta de crédito</p>
+                    <p><strong>Cantidad comprada:</strong> 1</p>
+                    <button class="boton-detalle">Ver detalles</button>
+                </div>
+            </div>
+            
+            <!-- Notificación 2 -->
+            <div class="notificacion">
+                <img src="https://images-cdn.ubuy.qa/64f0b78bfa0dec42cc7090b7-dell-inspiron-15-6-laptop-intel.jpg" alt="Laptop Dell">
+                <div class="notificacion-info">
+                    <h4>Laptop Dell Inspiron 15</h4>
+                    <p><strong>Precio:</strong> $679,990</p>
+                    <p><strong>Estado:</strong> En Proceso</p>
+                    <p><strong>Fecha de compra:</strong> 14 de Noviembre, 2024</p>
+                    <p><strong>Vendedor:</strong> Dell Store</p>
+                    <p><strong>Forma de pago:</strong> Transferencia bancaria</p>
+                    <p><strong>Cantidad comprada:</strong> 2</p>
+                    <button class="boton-detalle">Ver detalles</button>
+                </div>
+            </div>
+            
+            <!-- Notificación 3 -->
+            <div class="notificacion">
+                <img src="https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCL/122219182_01/w=1500,h=1500,fit=pad" alt="Auriculares Sony">
+                <div class="notificacion-info">
+                    <h4>Auriculares Sony WH-1000XM5</h4>
+                    <p><strong>Precio:</strong> $299,990</p>
+                    <p><strong>Estado:</strong> Enviado</p>
+                    <p><strong>Fecha de compra:</strong> 16 de Noviembre, 2024</p>
+                    <p><strong>Vendedor:</strong> Sony Store</p>
+                    <p><strong>Forma de pago:</strong> PayPal</p>
+                    <p><strong>Cantidad comprada:</strong> 1</p>
+                    <button class="boton-detalle">Ver detalles</button>
+                </div>
+            </div>
+            
+            <!-- Notificación 4 -->
+            <div class="notificacion">
+                <img src="https://www.apple.com/newsroom/images/product/watch/lifestyle/Apple-Watch-SE-aluminum-silver-220907_inline.jpg.large.jpg" alt="Reloj Inteligente">
+                <div class="notificacion-info">
+                    <h4>Reloj Inteligente Apple Watch Series 8</h4>
+                    <p><strong>Precio:</strong> $459,990</p>
+                    <p><strong>Estado:</strong> Pendiente</p>
+                    <p><strong>Fecha de compra:</strong> 18 de Noviembre, 2024</p>
+                    <p><strong>Vendedor:</strong> Apple Store</p>
+                    <p><strong>Forma de pago:</strong> Tarjeta de débito</p>
+                    <p><strong>Cantidad comprada:</strong> 3</p>
+                    <button class="boton-detalle">Ver detalles</button>
+                </div>
+            </div>
+            
+            <!-- Notificación 5 -->
+            <div class="notificacion">
+                <img src="https://www.canontiendaonline.cl/wcsstore/CCHCatalogAssetStore/5331C009_01.jpg" alt="Cámara Canon">
+                <div class="notificacion-info">
+                    <h4>Cámara Canon EOS R10</h4>
+                    <p><strong>Precio:</strong> $1,199,990</p>
+                    <p><strong>Estado:</strong> Enviado</p>
+                    <p><strong>Fecha de compra:</strong> 20 de Noviembre, 2024</p>
+                    <p><strong>Vendedor:</strong> Canon Store</p>
+                    <p><strong>Forma de pago:</strong> Tarjeta de crédito</p>
+                    <p><strong>Cantidad comprada:</strong> 1</p>
+                    <button class="boton-detalle">Ver detalles</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+<style>
+    
+/* Variables */
+:root {
+    --color-principal: #3B82F6;
+    --color-secundario: #4B5563;
+    --color-fondo: #F3F4F6;
+    --color-boton: #2563EB;
+    --color-texto: #1F2937;
+    --color-placeholder: #9CA3AF;
+    --borde-formulario: #D1D5DB;
+    --sombra: rgba(0, 0, 0, 0.1);
+    --radio-borde: 10px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-fondo);
+    margin: 0;
+    padding: 0;
+}
+
+.perfil-principal {
+    max-width: 1200px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: var(--radio-borde);
+    box-shadow: 0 4px 12px var(--sombra);
+    overflow: hidden;
+}
+
+/* Estilos para la navegación */
+.perfil-navegacion {
+    margin-bottom: 30px;
+}
+
+.perfil-navegacion h1 {
+    text-align: center;
+    font-size: 28px;
+    color: var(--color-principal);
+    margin-bottom: 20px;
+}
+
+/* Estilos de la barra de navegación */
+.tab-menu {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 2px solid var(--color-secundario);
+}
+
+.tab-menu a {
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-secundario);
+    padding: 12px 20px;
+    border-radius: var(--radio-borde);
+    background-color: var(--color-fondo);
+    transition: background-color 0.3s, color 0.3s, transform 0.2s ease;
+    box-shadow: 0 2px 4px var(--sombra);
+    flex: 1;
+}
+
+.tab-menu a:hover,
+.tab-menu .tab-activo {
+    background-color: var(--color-principal);
+    color: #fff;
+    box-shadow: 0 3px 6px var(--sombra);
+    transform: translateY(-2px); /* Sutil movimiento al hacer hover */
+}
+
+.tab-menu i {
+    margin-right: 8px; /* Espaciado entre icono y texto */
+}
+
+/* Estilo de contenido de las pestañas */
+.tab-contenido {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-contenido.activo {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .tab-menu {
+        flex-direction: column; /* Las pestañas se apilan verticalmente en pantallas más pequeñas */
+        align-items: center;
+    }
+
+    .tab-menu a {
+        width: 100%; /* Las pestañas ocupan todo el ancho */
+        padding: 10px 0;
+    }
+}
+
+
+.imagen-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px var(--sombra);
+    margin: 0 auto 20px auto;
+    display: block;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.formulario label {
+    font-size: 14px;
+    color: var(--color-texto);
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--borde-formulario);
+    border-radius: var(--radio-borde);
+    background: var(--color-fondo);
+    font-size: 16px;
+    color: var(--color-texto);
+    transition: border-color 0.3s;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    outline: none;
+    border-color: var(--color-principal);
+    background: #fff;
+}
+
+.formulario input::placeholder,
+.formulario textarea::placeholder {
+    color: var(--color-placeholder);
+}
+
+.boton {
+    width: max-content;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: var(--color-principal);
+    color: #fff;
+    border: none;
+    border-radius: var(--radio-borde);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    align-self: center;
+}
+
+.boton:hover {
+    background: var(--color-boton);
+    transform: translateY(-2px);
+}
+
+h2 {
+    color: var(--color-principal);
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.notificaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.notificacion {
+    display: flex;
+    gap: 20px;
+    background: white;
+    border-radius: var(--radio-borde);
+    padding: 20px;
+    box-shadow: 0 4px 8px var(--sombra);
+    transition: box-shadow 0.3s ease;
+    align-items: center;
+}
+
+.notificacion:hover {
+    box-shadow: 0 6px 12px var(--sombra);
+}
+
+.notificacion img {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--radio-borde);
+    object-fit: cover;
+}
+
+.notificacion-info {
+    flex: 1;
+    color: var(--color-texto);
+}
+
+.notificacion-info h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--color-principal);
+    margin-bottom: 10px;
+}
+
+.notificacion-info p {
+    font-size: 14px;
+    color: var(--color-secundario);
+    margin: 5px 0;
+}
+
+.boton-detalle {
+    background: var(--color-boton);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--radio-borde);
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+    align-self: flex-start;
+}
+
+.boton-detalle:hover {
+    background: var(--color-principal);
+    transform: translateY(-2px);
+}
+</style>
+
+
+  
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const tabs = document.querySelectorAll(".tab-menu a");
+        const contenidos = document.querySelectorAll(".tab-contenido");
+
+        tabs.forEach((tab) => {
+            tab.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                // Remover clase activo de todas las pestañas y secciones
+                tabs.forEach((t) => t.classList.remove("tab-activo"));
+                contenidos.forEach((contenido) =>
+                    contenido.classList.remove("activo")
+                );
+
+                // Activar la pestaña y la sección correspondiente
+                tab.classList.add("tab-activo");
+                const target = document.querySelector(tab.getAttribute("href"));
+                target.classList.add("activo");
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+    
+
+        <h1 class="mis-administradores-h1">Mis Administradores</h1>
+
+        <div class="container">
+            <!-- Usuarios se mantienen como estaban -->
+            <div class="user">
+                <div class="user-photo">
+                    <img src="https://f.rpp-noticias.io/2019/02/15/753296descarga-7jpg.jpg" alt="User Photo">
+                </div>
+                <div class="user-info">
+                    <h3>Juan Pérez</h3>
+                    <p>juan.perez@gmail.com</p>
+                </div>
+                <div class="user-notifications">
+                    <span class="badge">3</span>
+                    🔔
+                </div>
+            </div>
+        
+            <div class="user">
+                <div class="user-photo">
+                    <img src="https://www.jc-mouse.net/wp-content/uploads/2019/09/rostro-generado-por-ia-inteligencia-artificial.jpg" alt="User Photo">
+                </div>
+                <div class="user-info">
+                    <h3>Ana López</h3>
+                    <p>ana.lopez@gmail.com</p>
+                </div>
+                <div class="user-notifications">
+                    <span class="badge">5</span>
+                    🔔
+                </div>
+            </div>
+        
+            <div class="user">
+                <div class="user-photo">
+                    <img src="https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm9zdHJvc3xlbnwwfHwwfHx8MA%3D%3D" alt="User Photo">
+                </div>
+                <div class="user-info">
+                    <h3>Carlos Martínez</h3>
+                    <p>carlos.martinez@gmail.com</p>
+                </div>
+                <div class="user-notifications">
+                    <span class="badge">2</span>
+                    🔔
+                </div>
+            </div>
+        
+            <div class="user">
+                <div class="user-photo">
+                    <img src="https://i0.wp.com/www.diarlu.com/wp-content/uploads/2019/09/rostro-mujer-adulta.jpg?resize=500%2C500&ssl=1" alt="User Photo">
+                </div>
+                <div class="user-info">
+                    <h3>María González</h3>
+                    <p>maria.gonzalez@gmail.com</p>
+                </div>
+                <div class="user-notifications">
+                    <span class="badge">7</span>
+                    🔔
+                </div>
+            </div>
+        
+            <div class="user">
+                <div class="user-photo">
+                    <img src="https://st4.depositphotos.com/1017228/20766/i/450/depositphotos_207663178-stock-photo-image-happy-young-man-standing.jpg" alt="User Photo">
+                </div>
+                <div class="user-info">
+                    <h3>Pedro Ramírez</h3>
+                    <p>pedro.ramirez@gmail.com</p>
+                </div>
+                <div class="user-notifications">
+                    <span class="badge">4</span>
+                    🔔
+                </div>
+            </div>
+        
+            <div class="user">
+                <div class="user-photo">
+                    <img src="https://media.vogue.mx/photos/5c06fa99e91fffc64b354529/1:1/pass/cara_delevigne_7521.jpg" alt="User Photo">
+                </div>
+                <div class="user-info">
+                    <h3>Laura Fernández</h3>
+                    <p>laura.fernandez@gmail.com</p>
+                </div>
+                <div class="user-notifications">
+                    <span class="badge">6</span>
+                    🔔
+                </div>
+            </div>
+        
+            <div class="user">
+                <div class="user-photo">
+                    <img src="https://png.pngtree.com/thumb_back/fh260/background/20221029/pngtree-disappointed-man-frowns-looks-left-on-white-background-photo-image_39790984.jpg" alt="User Photo">
+                </div>
+                <div class="user-info">
+                    <h3>José López</h3>
+                    <p>jose.lopez@gmail.com</p>
+                </div>
+                <div class="user-notifications">
+                    <span class="badge">1</span>
+                    🔔
+                </div>
+            </div>
+        </div>
+        
+
+    
+
+
+
+
+
+    <!-- agregar container mis productos-->
+
+
+
+
+
+
+
+<div class="container-productos">
+    <div class="header-productos">
+        <h1>Mis Productos</h1>
+        <div class="filtro-busqueda">
+            <input type="text" placeholder="Buscar producto...">
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+    
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>ID</th>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>Precio de compra</th>
+                    <th>Precio de venta</th>
+                    <th>Descuento</th>
+                    <th>Stock</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://www.lg.com/ar/images/televisores/MD05827510/gallery/49_55LJ55_C_Desktop_02.jpg" target="_blank"><img src="https://www.lg.com/ar/images/televisores/MD05827510/gallery/49_55LJ55_C_Desktop_02.jpg" alt="Televisor LG" width="50" class="zoomable"></a></td>
+                    <td>000001</td>
+                    <td>09090987</td>
+                    <td>Televisor LG 45 pulgadas</td>
+                    <td>$285,000</td>
+                    <td>$380,000</td>
+                    <td>15%</td>
+                    <td>19 Unidades</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td><a href="https://chancafeq.pe/wp-content/uploads/20174336.png.webp" target="_blank"><img src="https://chancafeq.pe/wp-content/uploads/20174336.png.webp" alt="Refrigerador Samsung" width="50" class="zoomable"></a></td>
+                    <td>000002</td>
+                    <td>12345678</td>
+                    <td>Refrigerador Samsung 300L</td>
+                    <td>$500,000</td>
+                    <td>$680,000</td>
+                    <td>10%</td>
+                    <td>10 Unidades</td>
+                    <td><button class="btn-editar" onclick="editarProducto(2)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(2)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td><a href="https://m.media-amazon.com/images/I/61zRDADh+YS._AC_SL1500_.jpg" target="_blank"><img src="https://m.media-amazon.com/images/I/61zRDADh+YS._AC_SL1500_.jpg" alt="Laptop Dell" width="50" class="zoomable"></a></td>
+                    <td>000003</td>
+                    <td>87654321</td>
+                    <td>Laptop Dell Inspiron 15</td>
+                    <td>$1,200,000</td>
+                    <td>$1,500,000</td>
+                    <td>20%</td>
+                    <td>7 Unidades</td>
+                    <td><button class="btn-editar" onclick="editarProducto(3)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(3)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td><a href="https://http2.mlstatic.com/D_NQ_NP_728103-MLA40917205466_022020-O.webp" target="_blank"><img src="https://http2.mlstatic.com/D_NQ_NP_728103-MLA40917205466_022020-O.webp" alt="Microondas Panasonic" width="50" class="zoomable"></a></td>
+                    <td>000004</td>
+                    <td>23456789</td>
+                    <td>Microondas Panasonic 20L</td>
+                    <td>$120,000</td>
+                    <td>$180,000</td>
+                    <td>8%</td>
+                    <td>15 Unidades</td>
+                    <td><button class="btn-editar" onclick="editarProducto(4)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(4)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.kitchencenter.cl/cdn/shop/products/rrBfpxD72J.jpg?v=1715615525&width=1946" target="_blank"><img src="https://www.kitchencenter.cl/cdn/shop/products/rrBfpxD72J.jpg?v=1715615525&width=1946" alt="Lavadora Whirlpool" width="50" class="zoomable"></a></td>
+                    <td>000005</td>
+                    <td>34567890</td>
+                    <td>Lavadora Whirlpool 10Kg</td>
+                    <td>$800,000</td>
+                    <td>$1,000,000</td>
+                    <td>13%</td>
+                    <td>5 Unidades</td>
+                    <td><button class="btn-editar" onclick="editarProducto(5)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(5)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    
+    
+    
+    <main>
+        <div class="botones">
+            <button class="btn-nuevo">
+                <i class="fas fa-plus-circle"></i> Nuevo Producto
+            </button>
+            <button class="btn-actualizar">
+                <i class="fas fa-sync-alt"></i> Actualizar Lista
+            </button>
+        </div>
+    </main>
+    
+    <!-- Paginación -->
+    <div class="pagination">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <span>Siguiente ></span>
+    </div>
+</div>
+
+<!-- Modal para confirmaciones 
+
+
+
+
+<div id="confirmacionModal" class="modal">
+    <div class="modal-content">
+        <p id="confirmacionTexto"></p>
+        <button class="btn-si" onclick="confirmarAccion(true)">Sí</button>
+        <button class="btn-no" onclick="confirmarAccion(false)">No</button>
+    </div>
+</div>
+
+
+
+-->
+
+
+    <footer>
+        © 2024 Tu Empresa. Todos los derechos reservados. | <a href="#">Política de Privacidad</a>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+/* Variables Globales */
+:root {
+    --color-fondo: #ffffff;
+    --color-primario: #007bff;
+    --color-secundario: #333;
+    --color-hover: #0056b3;
+    --color-texto: #666;
+    --color-borde: #ddd;
+    --sombra-ligera: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --transicion: 0.3s ease;
+    --radius: 10px;
+    --padding-base: 10px;
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo General de Botones */
+button {
+    padding: var(--padding-base);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color var(--transicion);
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Sección de Perfil de Usuarios */
+.Perfil-usuarios {
+    background-color: var(--color-secundario);
+    color: #fff;
+    padding: 1rem;
+}
+
+.Perfil-usuarios nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.Perfil-usuarios nav ul {
+    display: flex;
+    gap: var(--padding-base);
+}
+
+.Perfil-usuarios nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Tabs */
+.tab-menu {
+    display: flex;
+    gap: var(--padding-base);
+    padding: 0;
+    list-style: none;
+}
+
+.tab-menu a {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-secundario);
+    color: #fff;
+    border-radius: var(--radius);
+    transition: background var(--transicion);
+}
+
+.tab-menu a:hover,
+.tab-menu a.active {
+    background-color: #555;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Tarjetas y Formularios */
+.profile-container,
+form {
+    background-color: var(--color-fondo);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--sombra-ligera);
+}
+
+.profile-container {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-borde);
+}
+
+/* Mis Administradores */
+.mis-administradores-h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--color-secundario);
+    text-align: center;
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 3px solid var(--color-primario);
+    padding-bottom: 10px;
+    transition: transform var(--transicion), color var(--transicion);
+}
+
+.mis-administradores-h1:hover {
+    color: var(--color-primario);
+    transform: scale(1.05);
+}
+
+/* Usuarios y Notificaciones */
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: var(--radius);
+    background: linear-gradient(145deg, #ffffff, #e8e8e8);
+    box-shadow: var(--sombra-ligera);
+    transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.user:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.user-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--sombra-ligera);
+}
+
+.user-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transicion);
+}
+
+.user-photo:hover img {
+    transform: scale(1.1);
+}
+
+/* Catálogo de Administradores */
+.container {
+    max-width: 1400px;
+    padding: 20px;
+    padding: 30px;  /* Aumento del padding para más espacio */
+    border-radius: 10px;
+    background: var(--color-fondo);
+    box-shadow: var(--sombra-ligera);
+    margin: 20px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead th {
+    background-color: var(--color-primario);
+    color: #fff;
+    padding: var(--padding-base);
+    text-align: left;
+}
+
+tbody td,
+thead th {
+    border: 1px solid var(--color-borde);
+    padding: var(--padding-base);
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .user {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .user-info {
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+        /* 4. MIS PRODUCTOS */
+
+
+
+
+        /* zoom de las fotos */
+
+         /* Estilo para las imágenes con efecto de zoom */
+         .zoomable {
+            transition: transform 0.3s ease; /* Efecto de transición */
+            cursor: pointer;
+        }
+    
+        .zoomable:hover {
+            transform: scale(20); /* Escala de la imagen al pasar el cursor */
+        }
+
+
+
+
+
+
+
+                /* Contenedor Principal de Productos */
+        .container-productos {
+            max-width: 1400px;  /* Aumento del tamaño máximo */
+            margin: 20px auto;
+            padding: 30px;  /* Aumento del padding para más espacio */
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Encabezado de Productos */
+        .header-productos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;  /* Aumento del margen */
+        }
+            
+
+        .header-productos h1 {
+            font-size: 32px;  /* Aumento del tamaño de la fuente */
+            font-weight: bold;
+            color: #333;
+        }
+
+        .filtro-busqueda {
+            display: flex;
+            align-items: center;
+            gap: 15px;  /* Aumento del espacio entre elementos */
+        }
+
+        .filtro-busqueda input {
+            width: 350px;  /* Aumento del tamaño del input */
+            padding: 12px;  /* Aumento del padding */
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .filtro-busqueda .fa-search {
+            color: #007bff;
+            font-size: 20px;
+        }
+
+        /* Tabla de Productos */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(150, 2, 2, 0.1);
+        }
+
+        table thead th {
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table td, table th {
+            border: 1px solid #ddd;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Botones */
+        button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-editar {
+            background-color: #ffc107;
+            color: #333;
+        }
+
+        .btn-eliminar {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .btn-nuevo {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-actualizar {
+            background-color: #007bff;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        /* Paginación */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .pagination button, .pagination span {
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+        }
+
+        .pagination button:hover {
+            background-color: #0056b3;
+        }
+ 
+
+
+</style>

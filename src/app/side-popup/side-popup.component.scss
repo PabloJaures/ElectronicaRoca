@@ -1,0 +1,64 @@
+.side-popup {
+  position: fixed;
+  top: 0;
+  right: -600px;
+  width: 600px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.4s ease, background-color 0.4s ease;
+  z-index: 1000;
+  border-radius: 8px 0 0 8px; /* Bordes redondeados */
+}
+
+.side-popup-content {
+  padding: 30px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 20px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #555;
+}
+
+.Title {
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.container-slidepopup {
+  height: auto;
+  max-height: 700px;
+  background-color: #f9f9f9; /* Cambié el fondo rojo por uno más suave */
+  border-radius: 8px;
+  overflow-y: auto; /* Para que sea desplazable si el contenido es muy largo */
+}
+
+.input_button {
+  margin: 0;
+  height: 35px;
+  width: 35px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input_button:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

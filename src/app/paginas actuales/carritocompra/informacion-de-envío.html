@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisa tu compra</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Revisa cuándo llega tu compra</h1>
+        <p class="address">Envío a <strong>San Ariel 1142</strong></p>
+
+        <div class="shipping">
+            <p class="shipping-title">Opciones de envío:</p>
+            <div class="option">
+                <span class="dot"></span>
+                <span class="shipping-detail">Mañana - Única opción disponible</span>
+                <span class="price">$2.940</span>
+            </div>
+        </div>
+
+        <h2>Resumen de compra</h2>
+        <ul class="summary">
+            <li><strong>Producto:</strong> $15.192</li>
+            <li><strong>Envío:</strong> $2.940</li>
+            <li><strong>Total:</strong> $18.132</li>
+        </ul>
+
+        <button class="btn-pagar">Pagar</button>
+
+        <img src="logo_webpay.png" alt="Logo WebPay" class="webpay-logo">
+    </div>
+
+    <style>
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.address {
+    font-size: 1rem;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+.shipping {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.shipping-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #007bff;
+    flex-shrink: 0;
+}
+
+.shipping-detail {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    color: #333333;
+    margin-left: 10px;
+}
+
+.price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.summary {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.summary li {
+    font-size: 1rem;
+    color: #555555;
+    margin-bottom: 8px;
+}
+
+.btn-pagar {
+    background-color: #28a745;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-pagar:hover {
+    background-color: #218838;
+}
+
+.webpay-logo {
+    margin-top: 20px;
+    width: 150px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.webpay-logo:hover {
+    opacity: 1;
+}
+
+
+
+    </style>
+</body>
+</html>
+

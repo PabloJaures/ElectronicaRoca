@@ -1,0 +1,276 @@
+<div *ngFor="let producto of productos">
+    <h3>{{ producto.NOM_Producto }}</h3>
+    <p>Precio: {{ producto.PRECIO_Producto }}</p>
+
+    <p>Descripción: {{ producto.DESCRIPCION_Producto }}</p>
+</div>
+<br><br><br><br><br>
+
+
+        <div class="administracion-usuarios">
+            <div class="encabezado">
+                <h1>Administración de Usuarios</h1>
+                <img src="https://z-p3-scontent.fscl25-1.fna.fbcdn.net/v/t39.30808-6/308630835_427749196151401_7735951907411784011_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH7jzALkyKsidiD97-BmfMeqchgaELv3vKpyGBoQu_e8k3QqWkypln7RXBb4kKPwRRn0Dr5bxIOxPMR6as3X7kQ&_nc_ohc=O-EbNwr3mtwQ7kNvgGEPbDU&_nc_zt=23&_nc_ht=z-p3-scontent.fscl25-1.fna&_nc_gid=AahcbP6dcX3__fvEr-03A8x&oh=00_AYBLBQVidqGtFkTt-FF-CtGQ7I8orRyH--kTDM8IwYcazw&oe=674534F1" 
+                     alt="Logo Roca">
+            </div>
+        </div>
+        <style>/* Reset de márgenes y rellenos */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background: linear-gradient(135deg, #ff7eb3, #8fd3f4, #fbc2eb);
+                background-size: 300% 300%;
+                animation: gradientAnimation 8s ease infinite;
+                font-family: 'Arial', sans-serif;
+                color: #fff;
+                margin: 0;
+            }
+            
+            /* Animación de fondo */
+            @keyframes gradientAnimation {
+                0% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+                100% { background-position: 0% 50%; }
+            }
+            
+            .administracion-usuarios {
+                text-align: center;
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+                border-radius: 15px;
+                padding: 30px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.3);
+                backdrop-filter: blur(10px);
+                border: 2px solid rgba(255, 255, 255, 0.4);
+                animation: popEffect 1s ease;
+            }
+            
+            /* Efecto de entrada */
+            @keyframes popEffect {
+                0% { transform: scale(0.9); opacity: 0; }
+                100% { transform: scale(1); opacity: 1; }
+            }
+            
+            .administracion-usuarios .encabezado {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .administracion-usuarios h1 {
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: 15px;
+                color: #000000;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.6);
+            }
+            
+            .administracion-usuarios img {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                border: 4px solid #ffefc3;
+                object-fit: cover;
+                box-shadow: 0 5px 15px rgba(255, 105, 180, 0.5), 0 0 15px rgba(173, 216, 230, 0.7);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            
+            .administracion-usuarios img:hover {
+                transform: scale(1.1);
+                box-shadow: 0 10px 30px rgba(255, 105, 180, 0.7), 0 0 25px rgba(173, 216, 230, 1);
+            }
+            
+            @media (max-width: 768px) {
+                .administracion-usuarios {
+                    padding: 20px;
+                }
+            
+                .administracion-usuarios h1 {
+                    font-size: 1.5rem;
+                }
+            
+                .administracion-usuarios img {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+            
+        </style>
+        
+
+    <main>
+        <div class="buttons">
+            <button>Agregar Trabajadores +</button>
+            <button>Agregar Administradores +</button>
+        </div>
+    
+        <div class="search">
+            <label for="search">Filtro de búsqueda:</label>
+            <input type="text" id="search" placeholder="Trabajadores/Administradores, Personal, Email">
+        </div>
+    
+                <!-- Checkbox para filtrar -->
+        <div class="filter-options">
+            <p>Filtrar por:</p>
+            <label class="checkbox-container">
+                <input type="checkbox" id="filter-admin" name="filter" value="admin">
+                <span class="checkmark"></span>
+                Administradores
+            </label>
+            <label class="checkbox-container">
+                <input type="checkbox" id="filter-worker" name="filter" value="worker">
+                <span class="checkmark"></span>
+                Trabajadores
+            </label>
+        </div>
+
+        
+
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>User Trabajador/Admin</th>
+                    <th>Personal</th>
+                    <th>Email</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>    
+                    <td>Administrador</td>
+                    <td>Cristobal Perez Zapata</td>
+                    <td>Cristobal&&#64;64;gmail.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Trabajador</td>
+                    <td>María González López</td>
+                    <td>maria.gonzalez&&#64;64;example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Administrador</td>
+                    <td>Juan Carlos Méndez</td>
+                    <td>juan.mendez&#64;example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Trabajador</td>
+                    <td>Sofía Ramírez Torres</td>
+                    <td>sofia.ramirez&&#64;64;example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Administrador</td>
+                    <td>Pedro Martínez Díaz</td>
+                    <td>pedro.martinez&&#64;64;example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Trabajador</td>
+                    <td>Luisa Fernández Gómez</td>
+                    <td>luisa.fernandez&&#64;64;example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Administrador</td>
+                    <td>Fernando Castro Vega</td>
+                    <td>fernando.castro&&#64;64;example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Trabajador</td>
+                    <td>Carla Domínguez Ruiz</td>
+                    <td>carla.dominguez&&#64;64;example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Administrador</td>
+                    <td>Diego Morales Peña</td>
+                    <td>diego.morales&&#64;64;example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Trabajador</td>
+                    <td>Ana López Ortega</td>
+                    <td>ana.lopez&&#64;64;example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Administrador</td>
+                    <td>Javier Pérez Salinas</td>
+                    <td>javier.perez&&#64;64;example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+    
+        <div class="pagination">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <span>Siguiente ></span>
+        </div>
+    
+        <br>
+    
+        <button class="update">Actualizar</button>
+    </main>
+    
+
+    
+   
+    <script>
+        let accionPendiente = null;
+    
+        function editarProducto(id) {
+            accionPendiente = { tipo: 'editar', id: id };
+            document.getElementById('confirmacionTexto').innerText = "¿Estás seguro que deseas editar este producto?";
+            mostrarModal();
+        }
+    
+        function eliminarProducto(id) {
+            accionPendiente = { tipo: 'eliminar', id: id };
+            document.getElementById('confirmacionTexto').innerText = "¿Estás seguro que deseas eliminar este producto?";
+            mostrarModal();
+        }
+    
+        function mostrarModal() {
+            document.getElementById('confirmacionModal').style.display = 'flex';
+        }
+    
+        function confirmarAccion(confirmado) {
+            document.getElementById('confirmacionModal').style.display = 'none';
+            if (confirmado && accionPendiente) {
+                if (accionPendiente.tipo === 'editar') {
+                    alert("Editar producto con ID " + accionPendiente.id);
+                } else if (accionPendiente.tipo === 'eliminar') {
+                    alert("Producto con ID " + accionPendiente.id + " eliminado.");
+                }
+            }
+            accionPendiente = null;
+        }
+    </script>
+    

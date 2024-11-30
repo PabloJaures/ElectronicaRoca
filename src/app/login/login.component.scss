@@ -1,0 +1,117 @@
+/* Estilos para la página de login------------------ */
+/* Estilos para la página de login */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  background: linear-gradient(to right, #ff5f5f, #2196f3); /* Fondo degradado en tonos rojo y azul */
+}
+
+.login-card {
+  background-color: #ffffff;
+  border-radius: 20px; /* Bordes más redondeados */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+  padding: 2.5rem;
+  max-width: 400px;
+  width: 100%;
+  border: 1px solid #2196f3; /* Borde en color azul */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.login-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Efecto de sombra al pasar el ratón */
+  transform: translateY(-5px); /* Ligera elevación al pasar el ratón */
+}
+
+.login-title {
+  font-size: 2.2rem; /* Tamaño de fuente mayor */
+  margin-bottom: 1.5rem;
+  color: #d32f2f; /* Título en color rojo */
+  text-align: center;
+  font-weight: 700; /* Negrita para el título */
+}
+
+.form-group {
+  margin-bottom: 1.5rem; /* Espacio más amplio entre los campos */
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #555; /* Color de texto más suave */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d32f2f; /* Borde en color rojo */
+  border-radius: 8px; /* Bordes más redondeados */
+  box-sizing: border-box;
+  font-size: 1rem; /* Tamaño de fuente del campo */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #ff1744; /* Cambio a un tono más intenso de rojo en foco */
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 23, 68, 0.5); /* Sombra roja en foco */
+}
+
+button.btn-login {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #2196f3; /* Botón azul */
+  border: none;
+  color: #ffffff;
+  border-radius: 8px; /* Bordes redondeados para el botón */
+  font-size: 1.1rem; /* Tamaño de fuente del botón */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.btn-login:hover {
+  background-color: #1976d2; /* Azul más oscuro al pasar el ratón */
+  transform: translateY(-2px); /* Efecto de elevación al pasar el ratón */
+}
+
+button.btn-guest {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #f44336; /* Color rojo para el botón de invitado */
+  border: none;
+  color: #ffffff;
+  border-radius: 8px; /* Bordes redondeados para el botón */
+  font-size: 1.1rem; /* Tamaño de fuente del botón */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 1rem; /* Espacio entre el botón de inicio de sesión y el de invitado */
+}
+
+button.btn-guest:hover {
+  background-color: #d32f2f; /* Rojo más oscuro al pasar el ratón */
+  transform: translateY(-2px); /* Efecto de elevación al pasar el ratón */
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.signup-link p {
+  margin: 0;
+}
+
+.signup-link a {
+  color: #2196f3; /* Azul para el enlace de registro */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+  color: #1976d2; /* Azul más oscuro al pasar el ratón */
+}

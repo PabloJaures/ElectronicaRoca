@@ -1,0 +1,490 @@
+
+<br><br><br><br>
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+
+
+<div class="administraciondeproductos">
+    <div class="encabezado">
+        <img src="https://z-p3-scontent.fscl25-1.fna.fbcdn.net/v/t39.30808-6/308630835_427749196151401_7735951907411784011_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH7jzALkyKsidiD97-BmfMeqchgaELv3vKpyGBoQu_e8k3QqWkypln7RXBb4kKPwRRn0Dr5bxIOxPMR6as3X7kQ&_nc_ohc=O-EbNwr3mtwQ7kNvgGEPbDU&_nc_zt=23&_nc_ht=z-p3-scontent.fscl25-1.fna&_nc_gid=AahcbP6dcX3__fvEr-03A8x&oh=00_AYBLBQVidqGtFkTt-FF-CtGQ7I8orRyH--kTDM8IwYcazw&oe=674534F1" 
+            alt="Logo Roca" 
+            class="logo">
+        <h1>Administración de Productos</h1>
+    </div>
+
+
+    <!-- Filtro de Búsqueda -->
+    <div class="filtro-busqueda">
+        <input type="text" id="buscar" placeholder="Buscar por ID, código o descripción del producto..." onkeyup="filtrarTabla()">
+        <i class="fas fa-search"></i>
+    </div>
+
+
+
+    <script>
+        // Función para filtrar la tabla
+        function filtrarTabla() {
+            const input = document.getElementById('buscar').value.toLowerCase();
+            const filas = document.querySelectorAll('#tabla-productos tbody tr');
+            filas.forEach(fila => {
+                const textoFila = fila.textContent.toLowerCase();
+                fila.style.display = textoFila.includes(input) ? '' : 'none';
+            });
+        }
+    </script>
+
+
+
+
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>Precio de compra</th>
+                    <th>Precio de venta</th>
+                    <th>Descuento</th>
+                    <th>Stock</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>000001</td>
+                    <td>09090987</td>
+                    <td>Televisor LG 45 pulgadas</td>
+                    <td>$285,000</td>
+                    <td>$380,000</td>
+                    <td>15%</td>
+                    <td>19 Unidades</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>000002</td>
+                    <td>12345678</td>
+                    <td>Refrigerador Samsung 300L</td>
+                    <td>$500,000</td>
+                    <td>$680,000</td>
+                    <td>10%</td>
+                    <td>10 Unidades</td>
+                    <td><button class="btn-editar" onclick="editarProducto(2)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(2)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>000003</td>
+                    <td>87654321</td>
+                    <td>Laptop Dell Inspiron 15</td>
+                    <td>$1,200,000</td>
+                    <td>$1,500,000</td>
+                    <td>20%</td>
+                    <td>7 Unidades</td>
+                    <td><button class="btn-editar" onclick="editarProducto(3)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(3)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>000004</td>
+                    <td>23456789</td>
+                    <td>Microondas Panasonic 20L</td>
+                    <td>$120,000</td>
+                    <td>$180,000</td>
+                    <td>8%</td>
+                    <td>15 Unidades</td>
+                    <td><button class="btn-editar" onclick="editarProducto(4)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(4)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>000005</td>
+                    <td>34567890</td>
+                    <td>Lavadora Whirlpool 10Kg</td>
+                    <td>$800,000</td>
+                    <td>$1,000,000</td>
+                    <td>13%</td>
+                    <td>5 Unidades</td>
+                    <td><button class="btn-editar" onclick="editarProducto(5)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(5)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="botones">
+            <button class="btn-nuevo">
+                <i class="fas fa-plus-circle"></i> Nuevo
+            </button>
+            <button class="btn-actualizar">
+                <i class="fas fa-sync-alt"></i> Actualizar
+            </button>
+        </div>
+        
+        <!-- CDN de Font Awesome -->
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        
+    </main>
+</div>
+
+<!-- Modal de Confirmación -->
+<div id="confirmacionModal" class="modal">
+    <div class="modal-content">
+        <p id="confirmacionTexto"></p>
+        <button class="btn-si" onclick="confirmarAccion(true)">Sí</button>
+        <button class="btn-no" onclick="confirmarAccion(false)">No</button>
+    </div>
+</div>
+
+<script>
+    let accionPendiente = null;
+
+    function editarProducto(id) {
+        accionPendiente = { tipo: 'editar', id: id };
+        document.getElementById('confirmacionTexto').innerText = "¿Estás seguro que deseas editar este producto?";
+        mostrarModal();
+    }
+
+    function eliminarProducto(id) {
+        accionPendiente = { tipo: 'eliminar', id: id };
+        document.getElementById('confirmacionTexto').innerText = "¿Estás seguro que deseas eliminar este producto?";
+        mostrarModal();
+    }
+
+    function mostrarModal() {
+        document.getElementById('confirmacionModal').style.display = 'flex';
+    }
+
+    function confirmarAccion(confirmado) {
+        document.getElementById('confirmacionModal').style.display = 'none';
+        if (confirmado && accionPendiente) {
+            if (accionPendiente.tipo === 'editar') {
+                alert("Editar producto con ID " + accionPendiente.id);
+            } else if (accionPendiente.tipo === 'eliminar') {
+                alert("Producto con ID " + accionPendiente.id + " eliminado.");
+            }
+        }
+        accionPendiente = null;
+    }
+</script>
+<br><br><br>
+
+
+<div class="pagination">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <span>Siguiente ></span>
+</div>
+
+<br>
+
+<button class="update">Actualizar</button>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+
+.filtro-busqueda {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.filtro-busqueda input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.filtro-busqueda .fa-search {
+    color: #007bff;
+    font-size: 18px;
+}
+
+
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.administraciondeproductos {
+    text-align: center;
+    max-width: 90%;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilos de botones */
+button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button i {
+    margin-right: 6px;
+}
+
+.btn-editar {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.btn-eliminar {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-editar:hover {
+    background-color: #e0a800;
+}
+
+.btn-eliminar:hover {
+    background-color: #c82333;
+}
+
+/* Botones Nuevo y Actualizar */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-nuevo {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-actualizar {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-nuevo:hover {
+    background-color: #218838;
+}
+
+.btn-actualizar:hover {
+    background-color: #0056b3;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.modal-content .btn-si {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.modal-content .btn-no {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.modal-content .btn-si:hover {
+    background-color: #218838;
+}
+
+.modal-content .btn-no:hover {
+    background-color: #c82333;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    table, th, td {
+        font-size: 14px;
+    }
+    
+    button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    .botones {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #0E6093;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #09486d;
+}
+
+.pagination span {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Update Button */
+.update {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #18be3c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.update:hover {
+    background-color: #30dce2;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search {
+        flex-direction: column;
+    }
+
+    table th, table td {
+        padding: 10px;
+    }
+}
+
+
+
+</style>
+
+
+
+
+

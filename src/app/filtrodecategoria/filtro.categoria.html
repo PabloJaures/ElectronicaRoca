@@ -1,0 +1,52 @@
+ <!-- Filtro de Categorías -->
+ <div class="col-md-3">
+    <div class="filter-container">
+        <h4>Filtros de Categorías</h4>
+        <ul>
+            <li><a href="#">Electrónica</a></li>
+            <li><a href="#">Moda</a></li>
+            <li><a href="#">Hogar</a></li>
+            <li><a href="#">Deportes</a></li>
+            <li><a href="#">Juguetes</a></li>
+            <style>
+                ul {
+                  color: #880f0f;
+                  
+                }
+            
+               
+              </style>
+        </ul>
+        
+        <div class="filter-group">
+            <label for="price-range">Precio del producto</label>
+            <input type="range" id="price-range" min="0" max="500000" value="10000">
+            <span id="price-range-value">10,000</span>
+        </div>
+        <div class="filter-group">
+            <label for="keywords">Palabras clave:</label>
+            <input type="text" id="keywords" placeholder="Buscar...">
+        </div>
+        <div class="filter-group">
+            <label for="brands">Marcas:</label>
+            <select id="brands">
+                <option value="all">Todas</option>
+                <option value="brand1">Marca 1</option>
+                <option value="brand2">Marca 2</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="types">Tipos:</label>
+            <select id="types">
+                <option value="all">Todas</option>
+                <option value="type1">Tipo 1</option>
+                <option value="type2">Tipo 2</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="quantity">Cantidad de productos</label>
+            <input type="range" id="quantity-range" min="0" max="250" value="5">
+            <span id="quantity-range-value">5</span>
+        </div>
+    </div>
+</div>

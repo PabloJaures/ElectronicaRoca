@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Usuarios</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+        <div class="administracion-usuarios">
+            <div class="encabezado">
+                <h1>Administración de Usuarios</h1>
+                <img src="https://z-p3-scontent.fscl25-1.fna.fbcdn.net/v/t39.30808-6/308630835_427749196151401_7735951907411784011_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH7jzALkyKsidiD97-BmfMeqchgaELv3vKpyGBoQu_e8k3QqWkypln7RXBb4kKPwRRn0Dr5bxIOxPMR6as3X7kQ&_nc_ohc=O-EbNwr3mtwQ7kNvgGEPbDU&_nc_zt=23&_nc_ht=z-p3-scontent.fscl25-1.fna&_nc_gid=AahcbP6dcX3__fvEr-03A8x&oh=00_AYBLBQVidqGtFkTt-FF-CtGQ7I8orRyH--kTDM8IwYcazw&oe=674534F1" 
+                     alt="Logo Roca">
+            </div>
+        </div>
+        
+    </header>
+
+    <main>
+        <div class="buttons">
+            <button>Agregar Trabajadores +</button>
+            <button>Agregar Administradores +</button>
+        </div>
+    
+        <div class="search">
+            <label for="search">Filtro de búsqueda:</label>
+            <input type="text" id="search" placeholder="Trabajadores/Administradores, Personal, Email">
+        </div>
+    
+                <!-- Checkbox para filtrar -->
+        <div class="filter-options">
+            <p>Filtrar por:</p>
+            <label class="checkbox-container">
+                <input type="checkbox" id="filter-admin" name="filter" value="admin">
+                <span class="checkmark"></span>
+                Administradores
+            </label>
+            <label class="checkbox-container">
+                <input type="checkbox" id="filter-worker" name="filter" value="worker">
+                <span class="checkmark"></span>
+                Trabajadores
+            </label>
+        </div>
+
+        
+
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>User Trabajador/Admin</th>
+                    <th>Personal</th>
+                    <th>Email</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>    
+                    <td>Administrador</td>
+                    <td>Cristobal Perez Zapata</td>
+                    <td>Cristobal@gmail.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Trabajador</td>
+                    <td>María González López</td>
+                    <td>maria.gonzalez@example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Administrador</td>
+                    <td>Juan Carlos Méndez</td>
+                    <td>juan.mendez@example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Trabajador</td>
+                    <td>Sofía Ramírez Torres</td>
+                    <td>sofia.ramirez@example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Administrador</td>
+                    <td>Pedro Martínez Díaz</td>
+                    <td>pedro.martinez@example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Trabajador</td>
+                    <td>Luisa Fernández Gómez</td>
+                    <td>luisa.fernandez@example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Administrador</td>
+                    <td>Fernando Castro Vega</td>
+                    <td>fernando.castro@example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Trabajador</td>
+                    <td>Carla Domínguez Ruiz</td>
+                    <td>carla.dominguez@example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Administrador</td>
+                    <td>Diego Morales Peña</td>
+                    <td>diego.morales@example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Trabajador</td>
+                    <td>Ana López Ortega</td>
+                    <td>ana.lopez@example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>Administrador</td>
+                    <td>Javier Pérez Salinas</td>
+                    <td>javier.perez@example.com</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+    
+        <div class="pagination">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <span>Siguiente ></span>
+        </div>
+    
+        <br>
+    
+        <button class="update">Actualizar</button>
+    </main>
+    
+
+    
+    <style>
+
+
+
+/* Estilos de botones */
+
+
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #0E6093;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+header img {
+    width: 300px;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Main Section Styles */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button i {
+    margin-right: 6px;
+}
+
+.btn-editar {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.btn-eliminar {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-editar:hover {
+    background-color: #e0a800;
+}
+
+.btn-eliminar:hover {
+    background-color: #c82333;
+}
+
+/* Botones Nuevo y Actualizar */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-nuevo {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-actualizar {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-nuevo:hover {
+    background-color: #218838;
+}
+
+.btn-actualizar:hover {
+    background-color: #0056b3;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.modal-content .btn-si {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.modal-content .btn-no {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.modal-content .btn-si:hover {
+    background-color: #218838;
+}
+
+.modal-content .btn-no:hover {
+    background-color: #c82333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilo para el contenedor de botones */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Estilo para el botón "Agregar Trabajadores" */
+.buttons button:first-child {
+    background-color: #208dd1; /* Azul */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.buttons button:first-child:hover {
+    background-color: #08176b; /* Azul oscuro */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+.buttons button:first-child:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(14, 96, 147, 0.5);
+}
+
+/* Estilo para el botón "Agregar Administradores" */
+.buttons button:last-child {
+    background-color: #169732; /* Rojo */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.buttons button:last-child:hover {
+    background-color: #a62632; /* Rojo oscuro */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+.buttons button:last-child:focus {
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(230, 57, 70, 0.5);
+}
+
+
+/* Search Bar */
+.search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.search input {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.search input:focus {
+    border-color: #0E6093;
+    outline: none;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    text-align: left;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #0E6093;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #09486d;
+}
+
+.pagination span {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Update Button */
+.update {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #18be3c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.update:hover {
+    background-color: #30dce2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.filter-options {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-options p {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.checkbox-container:hover {
+    color: #007bff;
+}
+
+.checkbox-container input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-container .checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #007bff;
+    border-radius: 4px;
+    margin-right: 8px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark {
+    background-color: #007bff;
+    border-color: #0056b3;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search {
+        flex-direction: column;
+    }
+
+    table th, table td {
+        padding: 10px;
+    }
+}
+
+
+
+
+    </style>
+    <script>
+        let accionPendiente = null;
+    
+        function editarProducto(id) {
+            accionPendiente = { tipo: 'editar', id: id };
+            document.getElementById('confirmacionTexto').innerText = "¿Estás seguro que deseas editar este producto?";
+            mostrarModal();
+        }
+    
+        function eliminarProducto(id) {
+            accionPendiente = { tipo: 'eliminar', id: id };
+            document.getElementById('confirmacionTexto').innerText = "¿Estás seguro que deseas eliminar este producto?";
+            mostrarModal();
+        }
+    
+        function mostrarModal() {
+            document.getElementById('confirmacionModal').style.display = 'flex';
+        }
+    
+        function confirmarAccion(confirmado) {
+            document.getElementById('confirmacionModal').style.display = 'none';
+            if (confirmado && accionPendiente) {
+                if (accionPendiente.tipo === 'editar') {
+                    alert("Editar producto con ID " + accionPendiente.id);
+                } else if (accionPendiente.tipo === 'eliminar') {
+                    alert("Producto con ID " + accionPendiente.id + " eliminado.");
+                }
+            }
+            accionPendiente = null;
+        }
+    </script>
+    
+</body>
+</html>

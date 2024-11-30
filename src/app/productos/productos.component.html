@@ -1,0 +1,806 @@
+    
+    <!-- Contenedor de Imágenes Centrado -->
+<div class="container mb-4 d-flex justify-content-center">
+    <div class="row text-center">
+      <div class="col-12 d-flex flex-column align-items-center">
+        
+          
+      
+      </div>
+    </div>
+  </div>
+  <br><br><br><br><br><br><br>
+  
+  <!-- Carrusel de publicidad -->
+  <!-- Carrusel de publicidad -->
+  <div class="carousel-container">
+    <div class="carousel">
+      <img class="product-image" src="https://images.prismic.io/ripley-cms/Zv6nrbVsGrYSwVzZ_sl7-desk-tv-031024-cl.webp?auto=format,compress&rect=0,1,2800,951&w=1920&h=652" alt="Producto 1">
+      <img class="product-image" src="https://images.prismic.io/ripley-cms/Zv6ls7VsGrYSwVxZ_sl2-desk-cyber-telefonia-031024-cl.webp?auto=format,compress&rect=0,1,2800,951&w=1920&h=652" alt="Producto 2">
+      <img class="product-image" src="https://images.prismic.io/ripley-cms/Zv4B9bVsGrYSwUjO_sl7-desk-electrohack-notebooks-031024-cl.webp?auto=format,compress&rect=0,1,2800,951&w=1920&h=652" alt="Producto 3">
+      <img class="product-image" src="https://images.prismic.io/ripley-cms/Zv6nrbVsGrYSwVzZ_sl7-desk-tv-031024-cl.webp?auto=format,compress&rect=0,1,2800,951&w=1920&h=652" alt="Producto 4">
+    </div>
+  
+    <div class="buttons">
+      <button id="prevButton" class="btn-carousel">⟨ Anterior</button>
+      <button id="nextButton" class="btn-carousel">Siguiente ⟩</button>
+    </div>
+  </div>
+  
+  
+  
+  <script>
+    // JavaScript para manejar el carrusel
+    const images = document.querySelectorAll('.product-image');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+    let currentImageIndex = 0;
+  
+    function showImage(index) {
+      images.forEach((image, i) => {
+        image.classList.toggle('active', i === index);
+      });
+    }
+  
+    prevButton.addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      showImage(currentImageIndex);
+    });
+  
+    nextButton.addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      showImage(currentImageIndex);
+    });
+  
+    // Mostrar la primera imagen por defecto
+    showImage(currentImageIndex);
+  </script>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+     <!-- Header productos -->
+ 
+    
+    
+    <div class="logo"> <br><br><br><br><br><br><br><br>
+    
+    
+    <nav> 
+        <div class="logo">
+            <a href="http://electronicaroca.cl">
+                <img src="assets/img/LogoElectrónicaRoca 1.png" alt="Logo" />
+            </a>
+        </div>
+        <ul>
+            <li><a href="#">Categorías</a></li>
+            <li><a href="#">Marcas</a></li>
+            <li><a href="#">Novedades</a></li>
+            <li>
+                <form>
+                    <input type="text" placeholder="Buscar">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+    
+    <style>
+        /* Estilos para el logo */
+        nav .logo img {
+            height: 50px; /* Ajusta la altura según tus necesidades */
+            width: auto;  /* Mantiene la proporción de la imagen */
+            display: block;
+        }
+    
+        /* Ajusta el logo en pantallas pequeñas */
+        @media screen and (max-width: 768px) {
+            nav .logo img {
+                height: 40px; /* Reducido para pantallas más pequeñas */
+            }
+        }
+    
+        /* Header fijo en la parte superior con margen superior */
+        nav {
+            position: fixed; /* Header fijo */
+            top: 20px; /* Espacio superior antes del header */
+            width: 100%; /* Ocupa el ancho completo de la pantalla */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2c3e50ce;
+            padding: 15px 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            margin-top: 60px; /* Ajusta este valor según el espacio que desees */
+        }
+    
+        /* Logo del menú */
+        nav .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+    
+        nav .logo a:hover {
+            color: #e74c3c;
+        }
+    
+        /* Lista de navegación */
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+    
+        nav ul li {
+            position: relative;
+            margin-left: 20px;
+        }
+    
+        /* Links de los elementos del menú */
+        nav ul li a {
+            font-size: 18px;
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: all 0.3s ease-in-out;
+        }
+    
+        nav ul li a:hover {
+            background-color: #e74c3c;
+            color: white;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+            transform: scale(1.05);
+        }
+    
+        /* Barra de búsqueda */
+        nav ul li form {
+            display: flex;
+            align-items: center;
+            background-color: #34495e5d;
+            border-radius: 30px;
+            padding: 5px 10px;
+            transition: all 0.3s ease-in-out;
+        }
+    
+        nav ul li form input {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            font-size: 16px;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+            width: 180px;
+        }
+    
+        nav ul li form input::placeholder {
+            color: #7f8c8d;
+        }
+    
+        /* Botón de la lupa en la barra de búsqueda */
+        nav ul li form button {
+            background-color: #e74c3c;
+            border: none;
+            width: 40px; /* Ajuste para asegurar que sea un círculo perfecto */
+            height: 40px; /* Igual altura y ancho */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%; /* Hace que el botón sea circular */
+            color: white;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+    
+        nav ul li form button:hover {
+            background-color: #c0392b;
+            box-shadow: 0 4px 8px rgba(192, 57, 43, 0.3);
+        }
+            
+        nav ul li form button i {
+            font-size: 16px;
+        }
+    
+        /* Efectos responsivos para pantallas pequeñas */
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 20px;
+            }
+    
+            nav .logo {
+                margin-bottom: 20px;
+            }
+    
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+            }
+    
+            nav ul li {
+                margin: 10px 0;
+            }
+    
+            nav ul li form {
+                justify-content: center;
+                width: 100%;
+            }
+    
+            nav ul li form input {
+                width: 100%;
+            }
+        }
+    
+        /* Agrega margen superior al contenido principal para evitar que quede debajo del header */
+        main {
+            padding-top: 120px; /* Ajusta el valor según la altura del header y el margen */
+        }
+    </style>
+    
+    
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br>
+<div class="container">
+    <div class="row">
+
+       
+        <!-- PUBLICIDAD1 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://th.bing.com/th/id/OIP.8Gw4nqc2W-dfTinxW_h_bgHaLh?rs=1&pid=ImgDetMain" class="img-fluid rounded-start" alt="Cafetera Espresso Automática">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text badge bg-primary text-white">PROMOCIÓN DEL MES</p>
+                            <h5 class="card-title">Cafetera Espresso Automática</h5>
+                            <p class="card-text">Disfruta de un café perfecto cada mañana con nuestra cafetera espresso con sistema de molido integrado.</p>
+                            <p class="card-text"><small class="text-muted">Oferta válida hasta fin de mes.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price text-decoration-line-through">$150.000 CLP</p>
+                                <p class="card-text offer-price text-success"><strong>$120.000 CLP</strong></p>
+                                <p class="card-text discount-percentage text-danger">20% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICIDAD2 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://m.media-amazon.com/images/I/71CMtFGDhxL._AC_SL1500_.jpg" class="img-fluid rounded-start" alt="Reloj Inteligente Fitness">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text badge bg-info text-white">EDICIÓN LIMITADA</p>
+                            <h5 class="card-title">Reloj Inteligente Fitness</h5>
+                            <p class="card-text">Mantén un control total de tu salud y actividad física con este reloj inteligente de edición limitada.</p>
+                            <p class="card-text"><small class="text-muted">Disponible por tiempo limitado.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price text-decoration-line-through">$80.000 CLP</p>
+                                <p class="card-text offer-price text-success"><strong>$65.000 CLP</strong></p>
+                                <p class="card-text discount-percentage text-danger">18.75% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICIDAD3 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5754/5754304_rd.jpg" class="img-fluid rounded-start" alt="Smart TV 4K Ultra HD">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text badge bg-success text-white">NUEVA LLEGADA</p>
+                            <h5 class="card-title">Smart TV 4K Ultra HD</h5>
+                            <p class="card-text">Disfruta de tus series y películas favoritas en 4K con colores vibrantes y claridad impresionante.</p>
+                            <p class="card-text"><small class="text-muted">Producto disponible ahora.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price text-decoration-line-through">$500.000 CLP</p>
+                                <p class="card-text offer-price text-success"><strong>$450.000 CLP</strong></p>
+                                <p class="card-text discount-percentage text-danger">10% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICIDAD4 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://i.citrus.world/uploads/promo/apple/iphone14plus/header.jpg?_t=1666158377" class="img-fluid rounded-start" alt="iPhone 14 Pro">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text badge bg-warning text-dark">PREVENTA EXCLUSIVA</p>
+                            <h5 class="card-title">iPhone 14 Pro</h5>
+                            <p class="card-text">Sé el primero en tener el nuevo iPhone con la mejor cámara del mercado y rendimiento inigualable.</p>
+                            <p class="card-text"><small class="text-muted">Disponible para preventa ahora.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price text-decoration-line-through">$1.200.000 CLP</p>
+                                <p class="card-text offer-price text-success"><strong>$1.050.000 CLP</strong></p>
+                                <p class="card-text discount-percentage text-danger">12.5% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICIDAD5 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://th.bing.com/th/id/R.c3f4ca6815dee070e9aad77a932c00eb?rik=ImYI3umS117YNA&pid=ImgRaw&r=0" class="img-fluid rounded-start" alt="Aspiradora Robot Inteligente">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text badge bg-danger text-white">AHORRA HOY</p>
+                            <h5 class="card-title">Aspiradora Robot Inteligente</h5>
+                            <p class="card-text">Limpieza automática y eficiente para tu hogar con tecnología de mapeo y control por app.</p>
+                            <p class="card-text"><small class="text-muted">Oferta válida solo por hoy.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price text-decoration-line-through">$300.000 CLP</p>
+                                <p class="card-text offer-price text-success"><strong>$250.000 CLP</strong></p>
+                                <p class="card-text discount-percentage text-danger">16.67% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICIDAD6 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_772310-CBT75907506377_042024-O.webp" class="img-fluid rounded-start" alt="Auriculares Inalámbricos Noise Cancelling">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text badge bg-secondary text-white">NUEVO</p>
+                            <h5 class="card-title">Auriculares Inalámbricos Noise Cancelling</h5>
+                            <p class="card-text">Sumérgete en tu música con cancelación de ruido activa y batería de larga duración.</p>
+                            <p class="card-text"><small class="text-muted">Disponible ahora.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price text-decoration-line-through">$120.000 CLP</p>
+                                <p class="card-text offer-price text-success"><strong>$100.000 CLP</strong></p>
+                                <p class="card-text discount-percentage text-danger">16.67% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICIDAD7 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://ebicis.cl/wp-content/uploads/2019/02/E-Fold-Pro-300x300.webp" class="img-fluid rounded-start" alt="Bicicleta Eléctrica Plegable">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text badge bg-dark text-white">NUEVO</p>
+                            <h5 class="card-title">Bicicleta Eléctrica Plegable</h5>
+                            <p class="card-text">Aventuras al aire libre con esta bicicleta eléctrica, ligera y fácil de llevar.</p>
+                            <p class="card-text"><small class="text-muted">Oferta limitada.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price text-decoration-line-through">$600.000 CLP</p>
+                                <p class="card-text offer-price text-success"><strong>$550.000 CLP</strong></p>
+                                <p class="card-text discount-percentage text-danger">8.33% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICIDAD8 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://todotablet.cl/wp-content/uploads/2023/01/923bad82-7591-4557-b8eb-dd8659c3568b.png" class="img-fluid rounded-start" alt="Escáner Portátil">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text badge bg-primary text-white">NUEVO</p>
+                            <h5 class="card-title">Escáner Portátil</h5>
+                            <p class="card-text">Digitaliza documentos y fotos en alta calidad con este escáner portátil.</p>
+                            <p class="card-text"><small class="text-muted">Compra ahora y recibe un descuento especial.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price text-decoration-line-through">$90.000 CLP</p>
+                                <p class="card-text offer-price text-success"><strong>$75.000 CLP</strong></p>
+                                <p class="card-text discount-percentage text-danger">16.67% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- PUBLICIDAD9 -->
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://www.kaufmann.cl/documents/68916/8166933/exterior1.webp/e88b5978-687a-1e58-9b63-27d5a5bc35ed" class="img-fluid rounded-start" alt="Mercedes-Benz GLE Coupe">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text">OFERTA ESPECIAL</p>
+                            <h5 class="card-title">Mercedes-Benz GLE Coupe</h5>
+                            <p class="card-text">Experiencia de lujo con el nuevo GLE Coupe, combinación perfecta de elegancia y rendimiento.</p>
+                            <p class="card-text"><small class="text-muted">Oferta exclusiva hasta fin de mes.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price">$70.000.000 CLP</p>
+                                <p class="card-text offer-price"><strong>$65.000.000 CLP</strong></p>
+                                <p class="card-text discount-percentage">7.14% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICIDAD10 -->
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCL/128815427_01/w=800,h=800,fit=pad" class="img-fluid rounded-start" alt="Cámara DSLR Canon EOS 90D">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text">PROMOCIÓN EXCLUSIVA</p>
+                            <h5 class="card-title">Cámara DSLR Canon EOS 90D</h5>
+                            <p class="card-text">Captura tus momentos con claridad profesional y detalles impresionantes con la Canon EOS 90D.</p>
+                            <p class="card-text"><small class="text-muted">Oferta válida hasta agotar stock.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price">$1.200.000 CLP</p>
+                                <p class="card-text offer-price"><strong>$1.000.000 CLP</strong></p>
+                                <p class="card-text discount-percentage">16.67% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICIDAD11 -->
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://www.apple.com/newsroom/images/product/watch/standard/Apple_watch-series-6-aluminum-blue-case-countup-watchface_09152020_carousel.jpg.large.jpg" class="img-fluid rounded-start" alt="Apple Watch Series 6">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text">NUEVO LANZAMIENTO</p>
+                            <h5 class="card-title">Apple Watch Series 6</h5>
+                            <p class="card-text">Monitorea tu salud y actividad física con el nuevo Apple Watch Series 6, más avanzado que nunca.</p>
+                            <p class="card-text"><small class="text-muted">Disponible ahora con envío gratis.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price">$350.000 CLP</p>
+                                <p class="card-text offer-price"><strong>$300.000 CLP</strong></p>
+                                <p class="card-text discount-percentage">14.29% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICIDAD12 -->
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://dojiw2m9tvv09.cloudfront.net/23055/product/jbl11691.jpg" class="img-fluid rounded-start" alt="Parlante Bluetooth JBL Charge 4">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text">OFERTA TEMPORAL</p>
+                            <h5 class="card-title">Parlante Bluetooth JBL Charge 4</h5>
+                            <p class="card-text">Disfruta de tu música con un sonido potente y una duración de batería extendida.</p>
+                            <p class="card-text"><small class="text-muted">Oferta válida hasta el fin de semana.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price">$80.000 CLP</p>
+                                <p class="card-text offer-price"><strong>$65.000 CLP</strong></p>
+                                <p class="card-text discount-percentage">18.75% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICIDAD13 -->
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://rimage.ripley.cl/home.ripley/Attachment/MKP/5352/MPM00048897892/full_image-1.jpg" class="img-fluid rounded-start" alt="Silla Ergónomica Gaming">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text">¡NUEVO!</p>
+                            <h5 class="card-title">Silla Ergónomica Gaming</h5>
+                            <p class="card-text">Diseñada para la comodidad durante largas sesiones de juego o trabajo, con ajuste total.</p>
+                            <p class="card-text"><small class="text-muted">Disponible en varios colores.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price">$150.000 CLP</p>
+                                <p class="card-text offer-price"><strong>$120.000 CLP</strong></p>
+                                <p class="card-text discount-percentage">20% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICIDAD14 -->
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCL/118282389_01/w=1500,h=1500,fit=pad" class="img-fluid rounded-start" alt="Silla de Oficina Executive">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text">OFERTA</p>
+                            <h5 class="card-title">Silla de Oficina Executive</h5>
+                            <p class="card-text">Confort y estilo para tu oficina con nuestra silla de oficina de alta gama y ajustes ergonómicos.</p>
+                            <p class="card-text"><small class="text-muted">Envío gratuito en compras superiores a $200.000 CLP.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price">$250.000 CLP</p>
+                                <p class="card-text offer-price"><strong>$200.000 CLP</strong></p>
+                                <p class="card-text discount-percentage">20% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICIDAD15 -->
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_982019-MLC76657178765_052024-O.webp" class="img-fluid rounded-start" alt="Zapatos de Cuero Clásicos">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text">¡HORA DE UN CAMBIO!</p>
+                            <h5 class="card-title">Zapatos de Cuero Clásicos</h5>
+                            <p class="card-text">Elegancia y comodidad en cada paso con nuestros nuevos zapatos de cuero para ocasiones especiales.</p>
+                            <p class="card-text"><small class="text-muted">Disponible en varias tallas y colores.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price">$90.000 CLP</p>
+                                <p class="card-text offer-price"><strong>$75.000 CLP</strong></p>
+                                <p class="card-text discount-percentage">16.67% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICIDAD16 -->
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://cmctools.cl/wp-content/uploads/2021/05/SET-HERRAMIENTAS-77PZAS.jpg" class="img-fluid rounded-start" alt="Set de Herramientas Profesional">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text">HERRAMIENTAS DE CALIDAD</p>
+                            <h5 class="card-title">Set de Herramientas Profesional</h5>
+                            <p class="card-text">Completo set de herramientas para el hogar o el taller, con garantía de calidad y durabilidad.</p>
+                            <p class="card-text"><small class="text-muted">¡Aprovecha la oferta por tiempo limitado!</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price">$120.000 CLP</p>
+                                <p class="card-text offer-price"><strong>$100.000 CLP</strong></p>
+                                <p class="card-text discount-percentage">16.67% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- PUBLICIDAD17 -->
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_966952-MLC76365757659_052024-O.webp" class="img-fluid rounded-start" alt="Plancha de Vapor Profesional">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text">OFERTA EXCLUSIVA</p>
+                            <h5 class="card-title">Plancha de Vapor Profesional</h5>
+                            <p class="card-text">Logra un acabado perfecto en tus prendas con nuestra plancha de vapor de alta potencia.</p>
+                            <p class="card-text"><small class="text-muted">Oferta disponible hasta agotar stock.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price">$120.000 CLP</p>
+                                <p class="card-text offer-price"><strong>$100.000 CLP</strong></p>
+                                <p class="card-text discount-percentage">16.67% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PUBLICIDAD18 -->
+        <div class="col-md-6 col-lg-4 mb-3">
+            <div class="card h-100">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_663043-MLM49924725638_052022-O.webp" class="img-fluid rounded-start" alt="Paquete de Kleenex Familiar">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <p class="card-text">¡AHORRA AHORA!</p>
+                            <h5 class="card-title">Paquete de Kleenex Familiar</h5>
+                            <p class="card-text">Suavidad y absorción superior con nuestro paquete de Kleenex para toda la familia.</p>
+                            <p class="card-text"><small class="text-muted">Descuento por tiempo limitado.</small></p>
+                            <div class="price-container">
+                                <p class="card-text original-price">$20.000 CLP</p>
+                                <p class="card-text offer-price"><strong>$15.000 CLP</strong></p>
+                                <p class="card-text discount-percentage">25% de descuento</p>
+                            </div>
+                            <!-- Botón de favoritos -->
+                            <button class="favoritosproductos" onclick="toggleFavorite(this)">&#9825;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+ <!-- Script de favoritos -->
+ <script>
+    function toggleFavorite(button) {
+        button.classList.toggle('active'); // Cambia el estado activo de favoritos
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

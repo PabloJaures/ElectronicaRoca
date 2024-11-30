@@ -1,0 +1,90 @@
+/* Productos más comprados del día */
+.centered-dark {
+  text-align: center;
+  font-weight: 900;
+  color: #333;
+}
+
+/* Ajustes para el carrusel */
+.carousel-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  background-color: #ffffff; /* Fondo blanco para el contenedor del carrusel */
+}
+
+.carousel-item {
+  flex: 0 0 auto; /* Permite que cada ítem tenga un ancho fijo */
+  width: 100%; /* Asegura que el item ocupe el 100% del contenedor */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.carousel-control-prev, 
+.carousel-control-next {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  margin-top: 250px; /* Mantiene el margen superior para mover los botones hacia abajo */
+  margin-left: 1px; /* Añade espacio a la izquierda del botón anterior */
+  margin-right: 1px; /* Añade espacio a la derecha del botón siguiente */
+}
+
+/* Estilos adicionales para el carrusel */
+.carousel-item img {
+  width: 100%;
+  height: 250px; /* Altura de las imágenes */
+  object-fit: contain; /* Muestra la imagen completa sin recortarla */
+  border-radius: 10px 10px 0 0; /* Borde redondeado en la parte superior */
+  background-color: #ffffff;
+}
+
+.card {
+  border: none;
+  border-radius: 12px; /* Borde redondeado */
+  margin: 20px; /* Margen entre las tarjetas */
+  transition: transform 0.3s ease;
+  background-color: #ffffff; /* Fondo blanco para las tarjetas */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Efecto al pasar el mouse */
+}
+
+.card-img-top {
+  border-radius: 12px 12px 0 0; /* Borde redondeado en la parte superior de la imagen */
+}
+
+.card-body {
+  padding: 20px; /* Padding interno */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espaciado entre elementos del cuerpo */
+}
+
+.card-title {
+  margin-bottom: 15px; /* Espacio debajo del título */
+}
+
+.card-text {
+  margin-bottom: 20px; /* Espacio debajo de la descripción */
+}
+
+.btn-primary {
+  align-self: flex-end; /* Alinea el botón a la derecha */
+}

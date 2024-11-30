@@ -1,0 +1,81 @@
+<div class="form-container">
+  <form [formGroup]="form_register()" class="needs-validation" novalidate>
+    <label
+      >Nombre<input
+        type="text"
+        formControlName="Name"
+        class="form-control"
+        required
+    /></label>
+    <label
+      >Apellido<input
+        type="text"
+        formControlName="LastName"
+        class="form-control"
+        required
+    /></label>
+    <div class="valid-feedback">Looks good!</div>
+
+    <label>Telefono </label>
+    <div class="input-group">
+      <span class="input-group-text">+56</span
+      ><input class="form-control" type="tel" formControlName="Number" />
+    </div>
+    <label
+      >E-mail<input class="form-control" type="email" formControlName="Email"
+    /></label>
+    <label
+      >Direccion<input class="form-control" type="text" formControlName="Street"
+    /></label>
+    <label
+      >Indicaciones adicionales<input class="form-control" type="text" formControlName="Direccion_adicional"
+    /></label>
+    <label for="regionSelect">Región:</label>
+    <select
+      class="form-select"
+      id="regionSelect"
+      formControlName="Region"
+      (change)="onRegionChange($event)"
+    >
+      <option
+        *ngFor="let region of regionesData.regiones"
+        [value]="region.region"
+      >
+        {{ region.region }}
+      </option>
+    </select>
+
+    <label for="comunaSelect">Comuna:</label>
+    <select class="form-select" id="comunaSelect" formControlName="Comuna">
+      <option *ngFor="let comuna of comunas" [value]="comuna">
+        {{ comuna }}
+      </option>
+    </select>
+
+    <label
+      >Contraseña<input
+        class="form-control"
+        type="password"
+        formControlName="Password"
+    /></label>
+    <label
+      >Confirmar Contraseña<input
+        class="form-control"
+        type="password"
+        formControlName="ConfPassword"
+    /></label>
+
+    <button
+      class="btn"
+      type="submit"
+      (click)="Validator()"
+      [disabled]="form_register().invalid"
+    >
+      Confirmar
+    </button>
+  </form>
+</div>
+
+<pre>{{ form_register().value | json }}</pre>
+<h3>Es valido?</h3>
+<pre>{{ form_register().valid | json }}</pre>

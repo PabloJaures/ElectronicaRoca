@@ -1,0 +1,50 @@
+import { Routes } from '@angular/router';
+//Paginas Principales
+import { HomeComponent } from './home/home.component';
+import { NovedadesComponent } from './novedades/novedades.component';
+import { RegisterComponent } from './register/register.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { FavoritosComponent } from './favoritos/favoritos.component';
+import { ProductosComponent } from './productos/productos.component';
+import { HistorialComponent } from './historial/historial.component';
+import { AdministradorComponent } from './administrador/administrador.component';
+import { CarritoComponent } from './carrito/carrito.component';
+import { SidePopupComponent } from './side-popup/side-popup.component';
+import { ProductcrComponent } from './productcr/productcr.component';
+import { LoginComponent } from './login/login.component';
+import { LoginInvitedComponent } from './login-invited/login-invited.component';
+import { LomasvendidoComponent } from './lomasvendido/lomasvendido.component';
+import { AdministracionDeProductosComponent } from './administracion-de-productos/administracion-de-productos.component';
+import { AdministracionDeUsuariosComponent } from './administracion-de-usuarios/administracion-de-usuarios.component';
+import { AgregarAdministradoresComponent } from './agregar-administradores/agregar-administradores.component';
+import { AgregarTrabajadoresComponent } from './agregar-trabajadores/agregar-trabajadores.component';
+import { ElegirDomicilioComponent } from './elegir-domicilio/elegir-domicilio.component';
+import { EnviarADomicilioComponent } from './enviar-a-domicilio/enviar-a-domicilio.component';
+import { InformacionDeEnvioComponent } from './informacion-de-envio/informacion-de-envio.component';
+import { PantallaUsuarioComponent } from './pantalla-usuario/pantalla-usuario.component';
+
+export const routes: Routes = [
+  { path: '', redirectTo: 'Home', pathMatch: 'full' },
+  { path: 'Home', component: HomeComponent },
+  { path: 'Novedades', component: NovedadesComponent },
+  { path: 'Registar', component: RegisterComponent },
+  { path: 'Contacto', component: ContactoComponent },
+  { path: 'Favoritos', component: FavoritosComponent },
+  { path: 'Producto', component: ProductosComponent },
+  { path: 'Historial', component: HistorialComponent },
+  { path: 'Administrador', component: AdministradorComponent },
+  { path: 'Carrito', component: CarritoComponent },
+  { path: 'SidePopup', component: SidePopupComponent },
+  { path: 'Productcr', component: ProductcrComponent },
+  { path: 'Login', component: LoginComponent },
+  { path: 'LoginInvited', component: LoginInvitedComponent },
+  { path: 'Lomasvendido', component: LomasvendidoComponent },
+  { path: 'AdministracionDeProductos', component: AdministracionDeProductosComponent },
+  { path: 'AdministracionDeUsuarios', component: AdministracionDeUsuariosComponent },
+  { path: 'AgregarAdministradores', component: AgregarAdministradoresComponent },
+  { path: 'AgregarTrabajadores', component: AgregarTrabajadoresComponent },
+  { path: 'ElegirDomicilio', component: ElegirDomicilioComponent },
+  { path: 'EnviarADomicilio', component: EnviarADomicilioComponent },
+  { path: 'InformacionDeEnvio', component: InformacionDeEnvioComponent },
+  { path: 'PantallaUsuario', component: PantallaUsuarioComponent }
+];

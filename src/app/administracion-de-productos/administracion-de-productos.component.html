@@ -1,0 +1,166 @@
+
+<br><br><br><br>
+
+ <!-- debo ponerlo bien 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+-->
+
+
+<div class="administraciondeproductos">
+    <div class="encabezado">
+        <img src="https://z-p3-scontent.fscl25-1.fna.fbcdn.net/v/t39.30808-6/308630835_427749196151401_7735951907411784011_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH7jzALkyKsidiD97-BmfMeqchgaELv3vKpyGBoQu_e8k3QqWkypln7RXBb4kKPwRRn0Dr5bxIOxPMR6as3X7kQ&_nc_ohc=O-EbNwr3mtwQ7kNvgGEPbDU&_nc_zt=23&_nc_ht=z-p3-scontent.fscl25-1.fna&_nc_gid=AahcbP6dcX3__fvEr-03A8x&oh=00_AYBLBQVidqGtFkTt-FF-CtGQ7I8orRyH--kTDM8IwYcazw&oe=674534F1" 
+            alt="Logo Roca" 
+            class="logo">
+        <h1>Administración de Productos</h1>
+    </div>
+
+
+    <!-- Filtro de Búsqueda -->
+    <div class="filtro-busqueda">
+        <input type="text" id="buscar" placeholder="Buscar por ID, código o descripción del producto..." onkeyup="filtrarTabla()">
+        <i class="fas fa-search"></i>
+    </div>
+
+
+
+    
+
+
+
+
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>Precio de compra</th>
+                    <th>Precio de venta</th>
+                    <th>Descuento</th>
+                    <th>Stock</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>000001</td>
+                    <td>09090987</td>
+                    <td>Televisor LG 45 pulgadas</td>
+                    <td>$285,000</td>
+                    <td>$380,000</td>
+                    <td>15%</td>
+                    <td>19 Unidades</td>
+                    <td><button class="btn-editar" onclick="editarProducto(1)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(1)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>000002</td>
+                    <td>12345678</td>
+                    <td>Refrigerador Samsung 300L</td>
+                    <td>$500,000</td>
+                    <td>$680,000</td>
+                    <td>10%</td>
+                    <td>10 Unidades</td>
+                    <td><button class="btn-editar" onclick="editarProducto(2)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(2)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>000003</td>
+                    <td>87654321</td>
+                    <td>Laptop Dell Inspiron 15</td>
+                    <td>$1,200,000</td>
+                    <td>$1,500,000</td>
+                    <td>20%</td>
+                    <td>7 Unidades</td>
+                    <td><button class="btn-editar" onclick="editarProducto(3)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(3)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>000004</td>
+                    <td>23456789</td>
+                    <td>Microondas Panasonic 20L</td>
+                    <td>$120,000</td>
+                    <td>$180,000</td>
+                    <td>8%</td>
+                    <td>15 Unidades</td>
+                    <td><button class="btn-editar" onclick="editarProducto(4)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(4)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>000005</td>
+                    <td>34567890</td>
+                    <td>Lavadora Whirlpool 10Kg</td>
+                    <td>$800,000</td>
+                    <td>$1,000,000</td>
+                    <td>13%</td>
+                    <td>5 Unidades</td>
+                    <td><button class="btn-editar" onclick="editarProducto(5)"><i class="fas fa-edit"></i> Editar</button></td>
+                    <td><button class="btn-eliminar" onclick="eliminarProducto(5)"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="botones">
+            <button class="btn-nuevo">
+                <i class="fas fa-plus-circle"></i> Nuevo
+            </button>
+            <button class="btn-actualizar">
+                <i class="fas fa-sync-alt"></i> Actualizar
+            </button>
+        </div>
+        
+        
+    
+    </main>
+</div>
+
+<!-- Modal de Confirmación -->
+<div id="confirmacionModal" class="modal">
+    <div class="modal-content">
+        <p id="confirmacionTexto"></p>
+        <button class="btn-si" onclick="confirmarAccion(true)">Sí</button>
+        <button class="btn-no" onclick="confirmarAccion(false)">No</button>
+    </div>
+</div>
+
+
+    
+
+<br><br><br>
+
+
+<div class="pagination">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <span>Siguiente ></span>
+</div>
+
+<br>
+
+<button class="update">Actualizar</button>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

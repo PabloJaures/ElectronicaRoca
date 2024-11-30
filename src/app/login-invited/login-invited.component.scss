@@ -1,0 +1,58 @@
+.form-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9bb; /* Fondo claro para suavidad */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333; /* Texto más oscuro para mejor legibilidad */
+  font-size: 14px;
+}
+
+.form-container input, 
+.form-container select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff; /* Fondo blanco */
+  font-size: 14px;
+  transition: border-color 0.3s ease; /* Transición suave en el borde */
+}
+
+.form-container input:focus, 
+.form-container select:focus {
+  border-color: #000080; /* Azul oscuro en enfoque */
+  outline: none; /* Sin borde externo */
+}
+
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff; /* Azul profesional */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave para hover */
+}
+
+.form-container button:hover {
+  background-color: #0056b3; /* Azul más oscuro en hover */
+  transform: translateY(-2px); /* Efecto de elevación al pasar el cursor */
+}
+
+.form-container button:active {
+  background-color: #004494; /* Azul aún más oscuro en clic */
+  transform: translateY(0); /* Vuelve a la posición original */
+}
